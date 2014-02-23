@@ -1,6 +1,6 @@
 [user]
-	name = Ben Orenstein
-	email = ben.orenstein@gmail.com 
+	name = Daryll Santos
+	email = daryll.santos@@gmail.com 
 [alias]
 	co = checkout
         cleanup = !git remote prune origin && git gc && git clean -df && git stash clear
@@ -30,6 +30,6 @@
 [rerere]
 	enabled = 1
 [github]
-	user = r00k
+	user = daryllxd
 [merge]
         ff = only
