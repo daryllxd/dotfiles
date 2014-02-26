@@ -61,10 +61,11 @@ alias qw="cd ~/rails_projects/pageantus && subl ~/rails_projects/pageantus && t 
 alias rc='rails console'
 alias rdm="be rake db:migrate"
 alias rdms="rake db:migrate:status"
+alias rde="rake db:reset"
 alias rdrm="rdr && rdm"
+alias rds="be rake db:seed"
 alias rdtp="be rake db:test:prepare"
 alias re="rake erd"
-alias rg="rails generate"
 alias reguard='killall -9 ruby ; guard'
 alias remigrate='rake db:migrate && rake db:migrate:redo && rake db:schema:dump && rake db:test:prepare'
 alias remore='!! | more'
@@ -75,6 +76,8 @@ alias restart_postgres="stoppostgres && startpostgres"
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp *'
 alias retagwithcoffee='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp * && coffeetags -R -f >> tags'
 alias review="git diff master"
+alias rg="rails generate"
+alias rgm="rails generate migration"
 alias rk='killall -9 ruby'
 alias rs='bundle install && rails server -p 3000'
 alias s="subl"
