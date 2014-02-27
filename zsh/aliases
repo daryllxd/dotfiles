@@ -22,6 +22,7 @@ alias d='cd ~/.dotfiles && s .'
 alias dbprep='rdm && rdtp'
 alias dr='cd ~/Dropbox'
 alias e="be guard"
+alias f="flog"
 alias fs='foreman start'
 alias gac='git add -A && git commit -m'
 alias gad='git add --all .'
