@@ -29,6 +29,9 @@ source $HOME/.dotfiles/zsh/functions
 # Source prompt
 source $HOME/.dotfiles/zsh_prompt
 
+# Source cdpath
+cdpath=($HOME/rails_projects)
+
 # PATH stuff
 export PATH=bin:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

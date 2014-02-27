@@ -62,6 +62,7 @@ alias qw="cd ~/rails_projects/pageantus && subl ~/rails_projects/pageantus && t 
 alias rc='rails console'
 alias rdm="be rake db:migrate"
 alias rdms="rake db:migrate:status"
+alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 alias rdr="rake db:rollback"
 alias rdrm="rake db:rollback && rake db:migrate"
 alias red="rake erd && open erd.pdf"
