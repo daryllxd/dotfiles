@@ -54,6 +54,7 @@ alias hp='git push heroku'
 alias irb='irb --readline -r irb/completion'
 alias j="bundle install && jekyll serve --watch"
 alias newscreen="screen -S foo"
+alias o="open ."
 alias p="pry"
 alias q="subl ."
 alias rc='rails console'
