@@ -56,7 +56,7 @@ alias rdr="rake db:rollback"
 alias rdrm="rake db:rollback && rake db:migrate"
 alias red="rake erd && open erd.pdf"
 alias rds="be rake db:seed"
-alias re="rake db:reset && rake db:test:prepare"
+alias re="rake db:reset && tput bel && rake db:test:prepare && tput bel"
 alias rdmm='rake db:migrate && rake db:migrate:redo && rake db:schema:dump && rake db:test:prepare && rake db:seed && tput bel'
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp *'
 alias retagwithcoffee='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp * && coffeetags -R -f >> tags'
