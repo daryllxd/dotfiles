@@ -7,7 +7,7 @@ Pry.config.print = proc do |output, value|
   Hirb::View.view_or_page_output(value) || old_print.call(output, value)
 end
 
-require "awesome_print"
+# require "awesome_print"
 
 if Kernel.const_defined?("Rails") then
   require File.join(Rails.root,"config","environment")
@@ -20,7 +20,8 @@ if Kernel.const_defined?("Rails") then
   end
 end
 
-AwesomePrint.pry!
+# AwesomePrint.pry!
 
 Pry.config.commands.alias_command "e", "exit"
 Pry.config.commands.alias_command "r", "reload!"
+Pry.config.commands.alias_command "s", "show-routes"
