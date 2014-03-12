@@ -1,6 +1,8 @@
 require 'hirb'
-
 Hirb.enable
+
+require 'wirb'
+Wirb.start
 
 old_print = Pry.config.print
 Pry.config.print = proc do |output, value|

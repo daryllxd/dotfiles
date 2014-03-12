@@ -224,6 +224,10 @@ set ttimeoutlen=1
 " Turn on spell-checking in markdown and text.
 " au BufRead,BufNewFile *.md,*.txt setlocal spell
 
+" Make md files recognizable as markdown
+au BufRead,BufNewFile *.md set filetype=markdown
+
+
 " Merge a tab into a split in the previous window
 function! MergeTabs()
   if tabpagenr() == 1
