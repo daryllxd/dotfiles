@@ -20,6 +20,7 @@ alias cl='clear'
 alias d='cd ~/.dotfiles && s .'
 alias dbprep='rdm && rdtp'
 alias e="bundle install && bundle exec guard && tput bel"
+alias ec="COVERAGE=true bundle exec rspec && open coverage/index.html"
 alias f="flog"
 alias fs='foreman start'
 alias gac='git add -A && git commit -m'
