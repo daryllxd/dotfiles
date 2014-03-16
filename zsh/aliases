@@ -41,6 +41,7 @@ alias gla="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset 
 alias gp='git push'
 alias gpf='git push -f'
 alias gpr='git pull --rebase'
+alias gq='git add . && git commit -m "minor change"'
 alias grc='git rebase --continue'
 alias gre='git reset --hard HEAD && git clean -f         '
 alias gs='git status'
@@ -53,6 +54,7 @@ alias o="open ."
 alias od='cd ~/rails_projects/discourse-master && s . && cd -'
 alias og='cd ~/rails_projects/gitlabhq && s . && cd -'
 alias ol='cd ~/rails_projects/learn && s . && cd -'
+alias oq='cd ~/rails_projects/lifelong-learning && s . && cd -'
 alias p="pry"
 alias q="subl ."
 alias rc='rails console'
