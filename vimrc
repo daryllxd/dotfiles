@@ -150,7 +150,7 @@ set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set autoindent
 set showmatch
-set nowrap
+set wrap
 set backupdir=~/.tmp
 set directory=~/.tmp " Don't clutter my dirs up with swp and tmp files
 set autoread
@@ -167,7 +167,7 @@ set laststatus=2  " Always show status line.
 set relativenumber
 set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
 set autoindent " always set autoindenting on
-set bg=light
+set shell=zsh\ -i
 
 " Set the tag file search order
 set tags=./tags;
