@@ -14,7 +14,6 @@ Bundle "garbas/vim-snipmate"
 
 " Stuff I installed
 Bundle 'The-NERD-Commenter'
-Bundle 'The-NERD-tree'
 Bundle 'kien/ctrlp.vim'
 
 " Ben's Stuff
@@ -148,6 +147,14 @@ map <C-t> <esc>:tabnew<CR>
 map <C-x> <C-w>c
 map <C-n> :cn<CR>
 map <C-p> :cp<CR>
+
+" Navigating across splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+set splitbelow
+set splitright
 
 " Emacs-like beginning and end of line.
 imap <c-e> <c-o>$
