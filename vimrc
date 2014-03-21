@@ -15,6 +15,7 @@ Bundle "garbas/vim-snipmate"
 " Stuff I installed
 Bundle 'The-NERD-Commenter'
 Bundle 'The-NERD-tree'
+Bundle 'kien/ctrlp.vim'
 
 " Ben's Stuff
 Bundle 'ervandew/supertab'
@@ -180,7 +181,7 @@ set autoindent " always set autoindenting on
 set background=dark
 
 " Set the tag file search order
-set tags=./tags;
+set tags=./tags,tags;$HOME
 
 " Use _ as a word-separator
 " set iskeyword-=_

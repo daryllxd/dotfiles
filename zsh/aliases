@@ -92,6 +92,7 @@ alias track='git checkout -t'
 alias ts="t ls"
 alias u='cd ..'
 alias v='vim'
+alias vi="v ~/rails_projects/lifelong-learning/programming/tools/vim/vimtutor.md"
 
 # Heroku staging
 alias staging-console='heroku run console --remote staging'
