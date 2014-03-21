@@ -30,11 +30,11 @@ snor \ b<bs>\
 snor <c-x> b<bs><c-x>
 
 " By default load snippets in snippets_dir
-if empty(snippets_dir)
-	finish
-endif
+"if empty(snippets_dir)
+	"finish
+"endif
 
-call GetSnippets(snippets_dir, '_') " Get global snippets
+"call GetSnippets(snippets_dir, '_') " Get global snippets
 
-au FileType * if &ft != 'help' | call GetSnippets(snippets_dir, &ft) | endif
+"au FileType * if &ft != 'help' | call GetSnippets(snippets_dir, &ft) | endif
 " vim:noet:sw=4:ts=4:ft=vim
