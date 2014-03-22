@@ -103,6 +103,7 @@ map <Leader>m :Rmodel
 map <Leader>nn :sp ~/Dropbox/notes/programming_notes.txt<cr>
 map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 map <Leader>pn :sp ~/Dropbox/work/thoughtbot/notes/project-notes.txt<cr>
+map <Leader>q :q<CR>
 map <Leader>ra :%s/
 map <Leader>rd :!bundle exec rspec % --format documentation<CR>
 map <Leader>rf :CommandTFlush<CR>:CommandT<CR>
@@ -145,7 +146,7 @@ vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
 " Visual Line mode to Leader Leader
-nmap <Leader><Leader> V
+nmap <Leader><Leader> <C-w>w
 
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
