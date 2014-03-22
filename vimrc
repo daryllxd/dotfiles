@@ -65,7 +65,7 @@ augroup END
 runtime macros/matchit.vim
 " ================
 
-let mapleader = ","
+let mapleader = "\<Space>"
 
 map <Leader>ac :sp app/controllers/application_controller.rb<cr>
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
