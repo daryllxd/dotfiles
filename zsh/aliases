@@ -38,7 +38,7 @@ alias gg='git lg'
 alias gi="gem install"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -5"
 alias gla="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias gp='git push'
+alias gp='git push && tput bel'
 alias gpf='git push -f'
 alias gpr='git pull --rebase'
 alias gq='git add . && git commit -m "minor change"'
