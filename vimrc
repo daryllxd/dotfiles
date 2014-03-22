@@ -15,6 +15,7 @@ Bundle "garbas/vim-snipmate"
 " Stuff I installed
 Bundle 'The-NERD-Commenter'
 Bundle 'kien/ctrlp.vim'
+Bundle 'terryma/vim-expand-region'
 
 " Ben's Stuff
 Bundle 'ervandew/supertab'
@@ -100,7 +101,6 @@ map <Leader>j :CommandT app/assets/javascripts<cr>client/
 map <Leader>l oconsole.log 'debugging'<esc>:w<cr>
 map <Leader>m :Rmodel 
 map <Leader>nn :sp ~/Dropbox/notes/programming_notes.txt<cr>
-map <Leader>o :w<cr>:call RunCurrentLineInTest()<CR>
 map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 map <Leader>pn :sp ~/Dropbox/work/thoughtbot/notes/project-notes.txt<cr>
 map <Leader>ra :%s/
@@ -122,6 +122,7 @@ map <Leader>st :!ruby -Itest % -n "//"<left><left>
 map <Leader>su :RSunittest 
 map <Leader>sv :RSview 
 map <Leader>t :w<cr>:call RunCurrentTest()<CR>
+map <Leader>to :w<cr>:call RunCurrentLineInTest()<CR>
 map <Leader>y :!rspec --drb %<cr>
 map <Leader>u :Runittest<cr>
 map <Leader>vc :RVcontroller<cr>
@@ -133,6 +134,13 @@ map <Leader>vm :RVmodel<cr>
 map <Leader>vv :RVview<cr>
 map <Leader>w <C-w>w
 map <Leader>x :exec getline(".")<cr>
+
+" CtrlP to O since I use it a lot
+nnoremap <Leader>o :CtrlP<CR>
+
+" Region expanding, vvvvv to expand character selections.
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path

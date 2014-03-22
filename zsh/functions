@@ -4,16 +4,16 @@ function git-new-remote-tracking {
 
 function git_branch_name {
   val=`git branch 2>/dev/null | grep '^*' | colrm 1 2`
-  echo "$val"
+    echo "$val"
 }
 
 function mkd() {
-    mkdir -p "$@" && cd "$@"
+  mkdir -p "$@" && cd "$@"
 }
 
 function git-done {
   branch=`git_branch_name`
-  killruby ; spring stop ; git checkout master && git merge $branch --ff-only && bundle install && rake db:migrate db:test:prepare && rake && git push && git branch -D $branch && git push origin :$branch
+    killruby ; spring stop ; git checkout master && git merge $branch --ff-only && bundle install && rake db:migrate db:test:prepare && rake && git push && git branch -D $branch && git push origin :$branch
 }
 
 function git-nuke {
@@ -23,17 +23,17 @@ compdef _git git-nuke=git-checkout
 
 function git-on-master {
   branch=`git_branch_name`
-  git checkout master && git pull --rebase 
-  git checkout $branch
-  git rebase master
-  }
+    git checkout master && git pull --rebase 
+    git checkout $branch
+    git rebase master
+}
 
 function g {
   if [[ $# > 0 ]]; then
     git $@
   else
     git status
-  fi
+      fi
 }
 
 function rrg {
@@ -42,10 +42,23 @@ function rrg {
 
 function take {
   mkdir $1
-  cd $1
+    cd $1
 }
 
 # Allows commit message without typing quotes (can't have quotes in the commit msg though).
 function gc {
   git commit -m "$*"
 }
+
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    fg
+      zle redisplay
+  else
+    zle push-input
+      zle clear-screen
+      fi
+}
+
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
