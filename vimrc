@@ -149,8 +149,6 @@ map <C-x> <C-w>c
 map <C-n> :cn<CR>
 map <C-p> :cp<CR>
 
-" Help splits vertically
-cnoremap help vert help
 
 " Navigating across splits
 nnoremap <C-J> <C-W><C-J>
