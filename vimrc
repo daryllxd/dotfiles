@@ -127,8 +127,10 @@ map <Leader>y :!rspec --drb %<cr>
 map <Leader>u :Runittest<cr>
 map <Leader>vc :RVcontroller<cr>
 map <Leader>vf :RVfunctional<cr>
+map <Leader>va :tabe ~/.dotfiles/zsh/aliases <CR>
 map <Leader>vg :vsp<cr>:grep 
 map <Leader>vi :tabe ~/.vimrc<CR>
+map <Leader>vz :tabe ~/.zshrc<CR>
 map <Leader>vu :RVunittest<CR>
 map <Leader>vm :RVmodel<cr>
 map <Leader>vv :RVview<cr>
@@ -141,6 +143,9 @@ nnoremap <Leader>o :CtrlP<CR>
 " Region expanding, vvvvv to expand character selections.
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
+
+" Visual Line mode to Leader Leader
+nmap <Leader><Leader> V
 
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
