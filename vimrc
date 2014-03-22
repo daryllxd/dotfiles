@@ -16,6 +16,7 @@ Bundle "garbas/vim-snipmate"
 Bundle 'The-NERD-Commenter'
 Bundle 'kien/ctrlp.vim'
 Bundle 'terryma/vim-expand-region'
+Bundle 'thoughtbot/vim-rspec'
 
 " Ben's Stuff
 Bundle 'ervandew/supertab'
@@ -98,7 +99,6 @@ map <Leader>g :sp Gemfile<cr>
 map <Leader>h :CommandT<CR>
 map <Leader>i mmgg=G`m<CR>
 map <Leader>j :CommandT app/assets/javascripts<cr>client/
-map <Leader>l oconsole.log 'debugging'<esc>:w<cr>
 map <Leader>m :Rmodel 
 map <Leader>nn :sp ~/Dropbox/notes/programming_notes.txt<cr>
 map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
@@ -122,7 +122,6 @@ map <Leader>ss ds)i <esc>:w<cr>
 map <Leader>st :!ruby -Itest % -n "//"<left><left>
 map <Leader>su :RSunittest 
 map <Leader>sv :RSview 
-map <Leader>t :w<cr>:call RunCurrentTest()<CR>
 map <Leader>to :w<cr>:call RunCurrentLineInTest()<CR>
 map <Leader>y :!rspec --drb %<cr>
 map <Leader>u :Runittest<cr>
@@ -137,6 +136,13 @@ map <Leader>vm :RVmodel<cr>
 map <Leader>vv :RVview<cr>
 map <Leader>w <C-w>w
 map <Leader>x :exec getline(".")<cr>
+
+" Rspec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>tl :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+map <Leader>ts :call RunNearestSpec()<CR>
+
 
 " CtrlP to O since I use it a lot
 nnoremap <Leader>o :CtrlP<CR>
