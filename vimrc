@@ -115,7 +115,8 @@ map <Leader>sg :sp<cr>:grep
 map <Leader>sj :call OpenJasmineSpecInBrowser()<cr>
 map <Leader>sm :RSmodel 
 map <Leader>sp yss<p>
-map <Leader>sn :e ~/.vim/snippets/ruby.snippets<CR>
+map <Leader>snc :tabe ~/.vim/snippets/css.snippets<CR>
+map <Leader>snr :tabe ~/.vim/snippets/ruby.snippets<CR>
 map <Leader>so :so %<cr>
 map <Leader>sq j<c-v>}klllcs<esc>:wq<cr>
 map <Leader>ss ds)i <esc>:w<cr>
@@ -267,7 +268,6 @@ set ttimeoutlen=1
 
 " Make md files recognizable as markdown
 au BufRead,BufNewFile *.md set filetype=markdown
-au BufRead,BufNewFile *.scss set filetype=css
 
 " Make Ctrl-P plugin faster for git projects
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
