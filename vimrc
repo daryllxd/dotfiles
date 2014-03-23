@@ -130,6 +130,7 @@ map <Leader>vf :RVfunctional<cr>
 map <Leader>va :tabe ~/.dotfiles/zsh/aliases <CR>
 map <Leader>vg :vsp<cr>:grep 
 map <Leader>vi :tabe ~/.vimrc<CR>
+map <Leader>vl :tabe ~/rails_projects/lifelong-learning<CR>
 map <Leader>vz :tabe ~/.zshrc<CR>
 map <Leader>vu :RVunittest<CR>
 map <Leader>vm :RVmodel<cr>
@@ -266,6 +267,7 @@ set ttimeoutlen=1
 
 " Make md files recognizable as markdown
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.scss set filetype=css
 
 " Make Ctrl-P plugin faster for git projects
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
