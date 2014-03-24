@@ -18,6 +18,14 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'terryma/vim-expand-region'
 Bundle 'thoughtbot/vim-rspec'
 
+" Frontend
+Bundle 'othree/html5.vim'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-haml'
+
 " Ben's Stuff
 Bundle 'ervandew/supertab'
 Bundle 'kchmck/vim-coffee-script'
@@ -44,81 +52,80 @@ Bundle 'tpope/vim-foreplay'
 Bundle 'tpope/vim-classpath'
 Bundle 'guns/vim-clojure-static'
 
-" Colors
+" colors
 Bundle 'nanotech/jellybeans.vim'
 colorscheme jellybeans
 
 " ================
-" Ruby stuff
+" ruby stuff
 " ================
-syntax on                 " Enable syntax highlighting
-filetype plugin indent on " Enable filetype-specific indenting and plugins
+syntax on                 " enable syntax highlighting
+filetype plugin indent on " enable filetype-specific indenting and plugins
 
 augroup myfiletypes
-  " Clear old autocmds in group
+  " clear old autocmds in group
   autocmd!
   " autoindent with two spaces, always expand tabs
-  autocmd FileType ruby,eruby,yaml setlocal ai sw=2 sts=2 et
-  autocmd FileType ruby,eruby,yaml setlocal path+=lib
+  autocmd filetype ruby,eruby,yaml setlocal ai sw=2 sts=2 et
+  autocmd filetype ruby,eruby,yaml setlocal path+=lib
 
-augroup END
+augroup end
 
-" Enable built-in matchit plugin
+" enable built-in matchit plugin
 runtime macros/matchit.vim
 " ================
 
-let mapleader = "\<Space>"
+let mapleader = "\<space>"
 
-map <Leader>ac :sp app/controllers/application_controller.rb<cr>
-vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
-map <Leader>bb :!bundle install<cr>
-nmap <Leader>bi :source ~/.vimrc<cr>:BundleInstall<cr>
-vmap <Leader>bed "td?describe<cr>obed<tab><esc>"tpkdd/end<cr>o<esc>:nohl<cr>
-map <Leader>cc :!cucumber --drb %<CR>
-map <Leader>cu :Tabularize /\|<CR>
-map <Leader>co ggVG"*y
-map <Leader>cc :Rjcollection client/
-map <Leader>cj :Rjspec client/
-map <Leader>cm :Rjmodel client/
-map <Leader>ct :Rtemplate client/
-map <Leader>cv :Rjview client/
-map <Leader>cn :e ~/Dropbox/notes/coding-notes.txt<cr>
-map <Leader>d odebugger<cr>puts 'debugger'<esc>:w<cr>
-map <Leader>dr :e ~/Dropbox<cr>
-map <Leader>dj :e ~/Dropbox/notes/debugging_journal.txt<cr>
-map <Leader>ec :e ~/code/
-map <Leader>gac :Gcommit -m -a ""<LEFT>
-map <Leader>gc :Gcommit -m ""<LEFT>
-map <Leader>gr :e ~/Dropbox/docs/journal<CR>
-map <Leader>gs :Gstatus<CR>
-map <Leader>gw :!git add . && git commit -m 'WIP' && git push<cr>
-map <Leader>f :call OpenFactoryFile()<CR>
-map <Leader>fix :cnoremap % %<CR>
-map <Leader>fa :sp test/factories.rb<CR>
-map <Leader>g :sp Gemfile<cr>
-map <Leader>h :CommandT<CR>
-map <Leader>i mmgg=G`m<CR>
-map <Leader>j :CommandT app/assets/javascripts<cr>client/
-map <Leader>m :Rmodel 
-map <Leader>nn :sp ~/Dropbox/notes/programming_notes.txt<cr>
-map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
-map <Leader>pn :sp ~/Dropbox/work/thoughtbot/notes/project-notes.txt<cr>
-map <Leader>q :q<CR>
-map <Leader>ra :%s/
-map <Leader>rd :!bundle exec rspec % --format documentation<CR>
-map <Leader>rf :CommandTFlush<CR>:CommandT<CR>
-map <Leader>rs :vsp <C-r>#<cr><C-w>w
-map <Leader>rt q:?!ruby<cr><cr>
-map <Leader>rw :%s/\s\+$//<cr>:w<cr>
-map <Leader>sc :sp db/schema.rb<cr>
-map <Leader>sg :sp<cr>:grep 
-map <Leader>sj :call OpenJasmineSpecInBrowser()<cr>
-map <Leader>sm :RSmodel 
-map <Leader>sp yss<p>
-map <Leader>snc :tabe ~/.vim/snippets/css.snippets<CR>
-map <Leader>snr :tabe ~/.vim/snippets/ruby.snippets<CR>
-map <Leader>so :so %<cr>
-map <Leader>sq j<c-v>}klllcs<esc>:wq<cr>
+map <leader>ac :sp app/controllers/application_controller.rb<cr>
+vmap <leader>b :<c-u>!git blame <c-r>=expand("%:p") <cr> \| sed -n <c-r>=line("'<") <cr>,<c-r>=line("'>") <cr>p <cr>
+map <leader>bb :!bundle install<cr>
+nmap <leader>bi :source ~/.vimrc<cr>:BundleInstall<cr>
+vmap <leader>bed "td?describe<cr>obed<tab><esc>"tpkdd/end<cr>o<esc>:nohl<cr>
+map <leader>cc :!cucumber --drb %<cr>
+map <leader>cu :tabularize /\|<cr>
+map <leader>co ggvg"*y
+map <leader>cc :rjcollection client/
+map <leader>cj :rjspec client/
+map <leader>cm :rjmodel client/
+map <leader>ct :rtemplate client/
+map <leader>cv :rjview client/
+map <leader>cn :e ~/dropbox/notes/coding-notes.txt<cr>
+map <leader>d odebugger<cr>puts 'debugger'<esc>:w<cr>
+map <leader>dr :e ~/dropbox<cr>
+map <leader>dj :e ~/dropbox/notes/debugging_journal.txt<cr>
+map <leader>ec :e ~/code/
+map <leader>gac :gcommit -m -a ""<left>
+map <leader>gc :gcommit -m ""<left>
+map <leader>gr :e ~/dropbox/docs/journal<cr>
+map <leader>gs :gstatus<cr>
+map <leader>gw :!git add . && git commit -m 'wip' && git push<cr>
+map <leader>f :call openfactoryfile()<cr>
+map <leader>fix :cnoremap % %<cr>
+map <leader>fa :sp test/factories.rb<cr>
+map <leader>g :sp gemfile<cr>
+map <leader>i mmgg=g`m<cr>
+map <leader>j :commandt app/assets/javascripts<cr>client/
+map <leader>m :rmodel 
+map <leader>nn :sp ~/dropbox/notes/programming_notes.txt<cr>
+map <leader>p :set paste<cr>o<esc>"*]p:set nopaste<cr>
+map <leader>pn :sp ~/dropbox/work/thoughtbot/notes/project-notes.txt<cr>
+map <leader>q :q<cr>
+map <leader>ra :%s/
+map <leader>rd :!bundle exec rspec % --format documentation<cr>
+map <leader>rf :commandtflush<cr>:commandt<cr>
+map <leader>rs :vsp <c-r>#<cr><c-w>w
+map <leader>rt q:?!ruby<cr><cr>
+map <leader>rw :%s/\s\+$//<cr>:w<cr>
+map <leader>sc :sp db/schema.rb<cr>
+map <leader>sg :sp<cr>:grep 
+map <leader>sj :call openjasminespecinbrowser()<cr>
+map <leader>sm :rsmodel 
+map <leader>sp yss<p>
+map <leader>snc :tabe ~/.vim/snippets/scss.snippets<cr>
+map <leader>snr :tabe ~/.vim/snippets/ruby.snippets<cr>
+map <leader>so :so %<cr>
+map <leader>sq j<c-v>}klllcs<esc>:wq<cr>
 map <Leader>ss ds)i <esc>:w<cr>
 map <Leader>st :!ruby -Itest % -n "//"<left><left>
 map <Leader>su :RSunittest 
@@ -139,6 +146,9 @@ map <Leader>vv :RVview<cr>
 map <Leader>w <C-w>w
 map <Leader>x :exec getline(".")<cr>
 
+" Markdown surround in.
+nmap <Leader>h visS*<CR>
+
 " Rspec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>tl :call RunLastSpec()<CR>
@@ -158,7 +168,7 @@ nmap <Leader><Leader> <C-w>w
 
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
-map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
+map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR><CR>
 map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
@@ -264,8 +274,7 @@ set ttimeout
 set ttimeoutlen=1
 
 " Turn on spell-checking in markdown and text.
-" au BufRead,BufNewFile *.md,*.txt setlocal spell
-
+au BufRead,BufNewFile *.md,*.txt setlocal spell
 " Make md files recognizable as markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 
