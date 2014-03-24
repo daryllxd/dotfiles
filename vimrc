@@ -109,7 +109,6 @@ map <leader>j :commandt app/assets/javascripts<cr>client/
 map <leader>m :rmodel 
 map <leader>nn :sp ~/dropbox/notes/programming_notes.txt<cr>
 map <leader>p :set paste<cr>o<esc>"*]p:set nopaste<cr>
-map <leader>pn :sp ~/dropbox/work/thoughtbot/notes/project-notes.txt<cr>
 map <leader>q :q<cr>
 map <leader>ra :%s/
 map <leader>rd :!bundle exec rspec % --format documentation<cr>
@@ -139,6 +138,7 @@ map <Leader>va :tabe ~/.dotfiles/zsh/aliases <CR>
 map <Leader>vg :vsp<cr>:grep 
 map <Leader>vi :tabe ~/.vimrc<CR>
 map <Leader>vl :tabe ~/rails_projects/lifelong-learning<CR>
+map <Leader>vim :tabe ~/rails_projects/lifelong-learning/programming/tools/vim/vimtutor.md<CR>
 map <Leader>vz :tabe ~/.zshrc<CR>
 map <Leader>vu :RVunittest<CR>
 map <Leader>vm :RVmodel<cr>
