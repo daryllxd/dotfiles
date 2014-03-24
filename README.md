@@ -1,14 +1,8 @@
 ## Dotfiles :computer:
 
-> "A mind needs books like a sword needs a whetsone, if it is to keep its edge. That is why I read so much." - Tyrion Lannister
+Forked from [Ben Orenstein](http://github.com/r00k).
 
-Forked from Ben Orenstein [http://github.com/r00k](Ben Orenstein). :clap:
-
-zsh for a better shell. tmux to manage multiple terminals. pry for Ruby/Rails debugging.
-
-And the one vim to rule them all. :scream:
-
-ALIAS ALIAS DIN PAG MAY TIME! :neckbeard:
+vim, zsh, tmux, pry
 
 #### Installation
 
