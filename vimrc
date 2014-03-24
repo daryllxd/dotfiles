@@ -220,6 +220,7 @@ set autoindent " always set autoindenting on
 " set shell=zsh\ -i
 set background=dark
 set eadirection=ver
+set clipboard=unnamed
 
 " Set the tag file search order
 set tags=./tags,tags;$HOME
