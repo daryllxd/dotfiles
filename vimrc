@@ -82,48 +82,47 @@ vmap <leader>b :<c-u>!git blame <c-r>=expand("%:p") <cr> \| sed -n <c-r>=line("'
 map <leader>bb :!bundle install<cr>
 nmap <leader>bi :source ~/.vimrc<cr>:BundleInstall<cr>
 vmap <leader>bed "td?describe<cr>obed<tab><esc>"tpkdd/end<cr>o<esc>:nohl<cr>
-map <leader>cc :!cucumber --drb %<cr>
-map <leader>cu :tabularize /\|<cr>
-map <leader>co ggvg"*y
-map <leader>cc :rjcollection client/
-map <leader>cj :rjspec client/
-map <leader>cm :rjmodel client/
-map <leader>ct :rtemplate client/
-map <leader>cv :rjview client/
-map <leader>cn :e ~/dropbox/notes/coding-notes.txt<cr>
-map <leader>d odebugger<cr>puts 'debugger'<esc>:w<cr>
-map <leader>dr :e ~/dropbox<cr>
-map <leader>dj :e ~/dropbox/notes/debugging_journal.txt<cr>
-map <leader>ec :e ~/code/
-map <leader>gac :gcommit -m -a ""<left>
-map <leader>gc :gcommit -m ""<left>
-map <leader>gr :e ~/dropbox/docs/journal<cr>
-map <leader>gs :gstatus<cr>
-map <leader>gw :!git add . && git commit -m 'wip' && git push<cr>
-map <leader>f :call openfactoryfile()<cr>
-map <leader>fix :cnoremap % %<cr>
-map <leader>fa :sp test/factories.rb<cr>
-map <leader>g :sp gemfile<cr>
-map <leader>i mmgg=g`m<cr>
-map <leader>j :commandt app/assets/javascripts<cr>client/
-map <leader>m :rmodel 
-map <leader>nn :sp ~/dropbox/notes/programming_notes.txt<cr>
-map <leader>p :set paste<cr>o<esc>"*]p:set nopaste<cr>
-map <leader>q :q<cr>
-map <leader>ra :%s/
-map <leader>rd :!bundle exec rspec % --format documentation<cr>
-map <leader>rf :commandtflush<cr>:commandt<cr>
-map <leader>rs :vsp <c-r>#<cr><c-w>w
-map <leader>rt q:?!ruby<cr><cr>
-map <leader>rw :%s/\s\+$//<cr>:w<cr>
-map <leader>sc :sp db/schema.rb<cr>
-map <leader>sg :sp<cr>:grep 
-map <leader>sj :call openjasminespecinbrowser()<cr>
-map <leader>sm :rsmodel 
-map <leader>sp yss<p>
-map <leader>snc :tabe ~/.vim/snippets/scss.snippets<cr>
-map <leader>snr :tabe ~/.vim/snippets/ruby.snippets<cr>
-map <leader>so :so %<cr>
+map <Leader>cc :!cucumber --drb %<cr>
+map <Leader>cu :tabularize /\|<cr>
+map <Leader>co ggvg"*y
+map <Leader>cc :Rjcollection client/
+map <Leader>cj :Rjspec client/
+map <Leader>cm :Rjmodel client/
+map <Leader>ct :Rtemplate client/
+map <Leader>cv :Rjview client/
+map <Leader>cn :e ~/dropbox/notes/coding-notes.txt<cr>
+map <Leader>d odebugger<cr>puts 'debugger'<esc>:w<cr>
+map <Leader>dr :e ~/dropbox<cr>
+map <Leader>gac :gcommit -m -a ""<left>
+map <Leader>gc :gcommit -m ""<left>
+map <Leader>gr :e ~/dropbox/docs/journal<cr>
+map <Leader>gs :gstatus<cr>
+map <Leader>gw :!git add . && git commit -m 'wip' && git push<cr>
+map <Leader>f :call openfactoryfile()<cr>
+map <Leader>fix :cnoremap % %<cr>
+map <Leader>fa :sp test/factories.rb<cr>
+map <Leader>g :sp Gemfile<cr>
+map <Leader>i mmgg=g`m<cr>
+map <Leader>j :commandt app/assets/javascripts<cr>client/
+map <Leader>m :Rmodel 
+map <Leader>nn :sp ~/dropbox/notes/programming_notes.txt<cr>
+map <Leader>p :set paste<cr>o<esc>"*]p:set nopaste<cr>
+map <Leader>q :q<cr>
+map <Leader>ra :%s/
+map <Leader>rd :!bundle exec rspec % --format documentation<cr>
+map <Leader>rf :commandtflush<cr>:commandt<cr>
+map <Leader>rs :vsp <c-r>#<cr><c-w>w
+map <Leader>rt q:?!ruby<cr><cr>
+map <Leader>rw :%s/\s\+$//<cr>:w<cr>
+map <Leader>sc :sp db/schema.rb<cr>
+map <Leader>sg :sp<cr>:grep 
+map <Leader>sj :call openjasminespecinbrowser()<cr>
+map <Leader>sm :RSmodel 
+map <Leader>sp yss<p>
+map <Leader>snc :tabe ~/.vim/snippets/scss.snippets<cr>
+map <Leader>snm :tabe ~/.vim/snippets/markdown.snippets<cr>
+map <Leader>snr :tabe ~/.vim/snippets/ruby.snippets<cr>
+map <Leader>so :so %<cr>
 map <leader>sq j<c-v>}klllcs<esc>:wq<cr>
 map <Leader>ss ds)i <esc>:w<cr>
 map <Leader>st :!ruby -Itest % -n "//"<left><left>
@@ -154,7 +153,6 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>tl :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 map <Leader>ts :call RunNearestSpec()<CR>
-
 
 " CtrlP to O since I use it a lot
 nnoremap <Leader>o :CtrlP<CR>
