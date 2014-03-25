@@ -17,6 +17,7 @@ Bundle 'The-NERD-Commenter'
 Bundle 'kien/ctrlp.vim'
 Bundle 'terryma/vim-expand-region'
 Bundle 'thoughtbot/vim-rspec'
+Bundle 'godlygeek/tabular'
 
 " Frontend
 Bundle 'othree/html5.vim'
@@ -178,7 +179,6 @@ map <C-t> <esc>:tabnew<CR>
 map <C-x> <C-w>c
 map <C-n> :cn<CR>
 map <C-p> :cp<CR>
-
 
 " Navigating across splits
 nnoremap <C-J> <C-W><C-J>
