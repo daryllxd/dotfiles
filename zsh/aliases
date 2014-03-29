@@ -62,12 +62,12 @@ alias p="pry"
 alias q="vim ."
 alias rc='rails console'
 alias rdm="bundle exec rake db:migrate"
-alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 alias rdr="rake db:rollback"
 alias rdrm="rake db:rollback && rake db:migrate"
 alias red="rake erd && open erd.pdf"
 alias rds="be rake db:seed"
 alias re="rake db:reset && tput bel && rake db:test:prepare && tput bel"
+alias rel=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 alias rdmm='rake db:migrate && rake db:schema:dump && rake db:test:prepare && rake db:seed && tput bel'
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp *'
 alias retagwithcoffee='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp * && coffeetags -R -f >> tags'
@@ -89,8 +89,8 @@ alias startredis='redis-server /usr/local/etc/redis.conf &'
 alias t="tmux"
 alias ta="tmux a -t"
 alias tail-logs='heroku logs -t'
+alias ts="tmux new -s"
 alias track='git checkout -t'
-alias ts="t ls"
 alias u='cd ..'
 alias v='vim'
 alias vi="v ~/rails_projects/lifelong-learning/programming/tools/vim/vimtutor.md"
