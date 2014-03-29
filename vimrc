@@ -17,6 +17,7 @@ Bundle 'The-NERD-Commenter'
 Bundle 'kien/ctrlp.vim'
 Bundle 'terryma/vim-expand-region'
 Bundle 'thoughtbot/vim-rspec'
+Bundle 'jgdavey/tslime.vim'
 Bundle 'godlygeek/tabular'
 
 " Frontend
@@ -106,7 +107,7 @@ map <Leader>g :sp Gemfile<cr>
 map <Leader>i mmgg=g`m<cr>
 map <Leader>j :commandt app/assets/javascripts<cr>client/
 map <Leader>m :Rmodel 
-map <Leader>nn :sp ~/dropbox/notes/programming_notes.txt<cr>
+map <Leader>nn :sp ~/rails_projects/lifelong-learning/coding-notes.md<CR>
 map <Leader>p :set paste<cr>o<esc>"*]p:set nopaste<cr>
 map <Leader>q :q<cr>
 map <Leader>ra :%s/
@@ -150,6 +151,7 @@ map <Leader>x :exec getline(".")<cr>
 nmap <Leader>h visS*<CR>
 
 " Rspec.vim mappings
+let g:rspec_command = 'call Send_to_Tmux("spring rspec {spec}\n")'
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>tl :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
@@ -219,6 +221,13 @@ set autoindent " always set autoindenting on
 set background=dark
 set eadirection=ver
 set clipboard=unnamed
+
+" Remove swap file (not sure if correct)
+set backup 
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp 
+set backupskip=/tmp/*,/private/tmp/* 
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp 
+set writebackup
 
 " Set the tag file search order
 set tags=./tags,tags;$HOME
