@@ -95,14 +95,13 @@ map <Leader>cv :Rjview client/
 map <Leader>cn :e ~/dropbox/notes/coding-notes.txt<cr>
 map <Leader>d odebugger<cr>puts 'debugger'<esc>:w<cr>
 map <Leader>dr :e ~/dropbox<cr>
+map <Leader>f :sp spec/factories.rb<cr>
+map <Leader>fix :cnoremap % %<cr>
 map <Leader>gac :gcommit -m -a ""<left>
 map <Leader>gc :gcommit -m ""<left>
 map <Leader>gr :e ~/dropbox/docs/journal<cr>
 map <Leader>gs :gstatus<cr>
 map <Leader>gw :!git add . && git commit -m 'wip' && git push<cr>
-map <Leader>f :call openfactoryfile()<cr>
-map <Leader>fix :cnoremap % %<cr>
-map <Leader>fa :sp test/factories.rb<cr>
 map <Leader>g :sp Gemfile<cr>
 map <Leader>i mmgg=g`m<cr>
 map <Leader>j :commandt app/assets/javascripts<cr>client/

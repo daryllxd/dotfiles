@@ -19,19 +19,18 @@ compinit
 stty start undef
 stty stop undef
 
-# RVM 
-[[ -s "/Users/aerys/.rvm/scripts/rvm" ]] && source "/Users/aerys/.rvm/scripts/rvm"
-
 # Sourcing of other files
 source $HOME/.dotfiles/zsh/aliases
 source $HOME/.dotfiles/zsh/functions
 
 # Source prompt
 source $HOME/.dotfiles/zsh_prompt
+source ~/.bin/tmuxinator.zsh
 
 # Source cdpath
 cdpath=($HOME/rails_projects)
 
 # PATH stuff
 export PATH=bin:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
