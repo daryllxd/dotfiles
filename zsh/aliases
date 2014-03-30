@@ -22,7 +22,8 @@ alias dbprep='rdm && rdtp'
 alias e="bundle install && bundle exec guard && tput bel"
 alias ec="COVERAGE=true bundle exec rspec && open coverage/index.html"
 alias fs='foreman start'
-alias ga='git add --all'
+alias ga='git add'
+alias gaa='git add --all'
 alias gac='git add -A && git commit -m'
 alias gb='git branch'
 alias gc="git commit -m"
