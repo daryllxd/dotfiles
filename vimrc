@@ -95,7 +95,7 @@ map <Leader>cv :Rjview client/
 map <Leader>cn :e ~/dropbox/notes/coding-notes.txt<cr>
 map <Leader>d odebugger<cr>puts 'debugger'<esc>:w<cr>
 map <Leader>dr :e ~/dropbox<cr>
-map <Leader>f :sp spec/factories.rb<cr>
+map <Leader>f :vsp spec/factories.rb<cr>
 map <Leader>fix :cnoremap % %<cr>
 map <Leader>gac :gcommit -m -a ""<left>
 map <Leader>gc :gcommit -m ""<left>
@@ -109,6 +109,7 @@ map <Leader>m :Rmodel
 map <Leader>nn :sp ~/rails_projects/lifelong-learning/coding-notes.md<CR>
 map <Leader>p :set paste<cr>o<esc>"*]p:set nopaste<cr>
 map <Leader>q :q<cr>
+map <Leader>r :vsp config/routes.rb<cr>
 map <Leader>ra :%s/
 map <Leader>rd :!bundle exec rspec % --format documentation<cr>
 map <Leader>rf :commandtflush<cr>:commandt<cr>
