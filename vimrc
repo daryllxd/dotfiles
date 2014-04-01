@@ -107,6 +107,7 @@ map <Leader>i mmgg=g`m<cr>
 map <Leader>j :commandt app/assets/javascripts<cr>client/
 map <Leader>m :Rmodel 
 map <Leader>nn :sp ~/rails_projects/lifelong-learning/coding-notes.md<CR>
+map <Leader>oo :sp ~/rails_projects/lifelong-learning/<CR>
 map <Leader>p :set paste<cr>o<esc>"*]p:set nopaste<cr>
 map <Leader>q :q<cr>
 map <Leader>r :vsp config/routes.rb<cr>

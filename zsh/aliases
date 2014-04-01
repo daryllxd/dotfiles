@@ -1,108 +1,109 @@
 # Handle the fact that this file will be used with multiple OSs
 platform=`uname`
-if [[ $platform == 'Linux' ]]; then
-  alias a='ls -lrth --color'
-elif [[ $platform == 'Darwin' ]]; then
-  alias a='ls -lrthG'
+if [[ $platform == "Linux" ]]; then
+  alias a="ls -lrth --color"
+elif [[ $platform == "Darwin" ]]; then
+  alias a="ls -lrthG"
 fi
 
-alias -g G='| grep'
-alias -g L='| less'
-alias -g M='| more'
+alias -g G="| grep"
+alias -g L="| less"
+alias -g M="| more"
 alias a="ls"
-alias ack='ag'
+alias ack="ag"
 alias b="bundle"
-alias be='bundle exec'
-alias bi='bundle install'
-alias bu='bundle update'
-alias c='cd'
-alias cl='clear'
-alias d='cd ~/.dotfiles'
-alias dbprep='rdm && rdtp'
+alias be="bundle exec"
+alias bi="bundle install"
+alias bu="bundle update"
+alias c="cd"
+alias cl="clear"
+alias d="cd ~/.dotfiles"
+alias dbprep="rdm && rdtp"
 alias e="bundle install && bundle exec guard && tput bel"
 alias ec="COVERAGE=true bundle exec rspec && open coverage/index.html"
-alias fs='foreman start'
-alias ga='git add'
-alias gaa='git add --all'
-alias gac='git add -A && git commit -m'
-alias gb='git branch'
+alias fs="foreman start"
+alias ga="git add"
+alias gaa="git add --all"
+alias gac="git add -A && git commit -m"
+alias gb="git branch"
 alias gc="git commit -m"
-alias gca='git commit --amend -m'
-alias gch='git checkout'
-alias gchm='git checkout master'
-alias gcl='git clone'
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias gdm='git diff master'
-alias get='sudo apt-get install'
+alias gca="git commit --amend -m"
+alias gch="git checkout"
+alias gchm="git checkout master"
+alias gcl="git clone"
+alias gd="git diff"
+alias gdc="git diff --cached"
+alias gdm="git diff master"
+alias get="sudo apt-get install"
 alias gi="gem install"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -5"
 alias gla="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gm="git merge"
-alias gp='git push && tput bel'
-alias gpf='git push -f'
-alias gpr='git pull --rebase'
-alias grc='git rebase --continue'
-alias gre='git reset --hard HEAD && git clean -f         '
-alias gs='git status'
+alias gp="git push && tput bel"
+alias gpf="git push -f"
+alias gpr="git pull --rebase"
+alias grc="git rebase --continue"
+alias gre="git reset --hard HEAD && git clean -f         "
+alias gs="git status"
 alias h="heroku"
-alias hpr='hub pull-request'
-alias hp='git push heroku'
+alias hpr="hub pull-request"
+alias hp="git push heroku"
 alias j="bundle install && jekyll serve --watch --trace"
 alias o="open ."
-alias ob='cd ~/rails_projects/blog'
-alias od='cd ~/rails_projects/discourse-master'
-alias og='cd ~/rails_projects/gitlabhq'
-alias ol='cd ~/rails_projects/learn'
-alias oo='cd ~/rails_projects/lifelong-learning'
+alias ob="cd ~/rails_projects/blog"
+alias od="cd ~/rails_projects/discourse-master"
+alias og="cd ~/rails_projects/gitlabhq"
+alias ol="cd ~/rails_projects/learn"
+alias oo="cd ~/rails_projects/lifelong-learning"
 alias p="pry"
 alias q="vim ."
-alias rc='rails console'
+alias rc="rails console"
 alias rdm="bundle exec rake db:migrate"
-alias rdmm='rake db:migrate && rake db:schema:dump && rake db:test:prepare && rake db:seed && tput bel'
+alias rdmm="rake db:migrate && rake db:schema:dump && rake db:test:prepare && rake db:seed && tput bel"
 alias rdr="rake db:rollback"
 alias rdrm="rake db:rollback && rake db:migrate"
 alias red="rake erd && open erd.pdf"
 alias rds="be rake db:seed"
 alias re="rake db:reset && tput bel && rake db:test:prepare && tput bel"
 alias rel=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
-alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp *'
+alias retag="ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp *"
 alias rg="rails generate"
-alias rk='killall -9 ruby'
-alias rr='rake routes'
-alias rs='bundle install && rails server -p 3000 && tput bel'
+alias rk="killall -9 ruby"
+alias rn="rails-composer"
+alias rr="rake routes"
+alias rs="bundle install && rails server -p 3000 && tput bel"
 alias rt="be rake db:test:prepare"
-alias safepush='git pull --rebase && bundle install && rdm && rake && git push'
-alias sc='staging-console'
-alias shpush='rake && hpush'
-alias sp='safepush'
-alias squash='git rebase -i master'
-alias staging='git push heroku-staging master'
-alias startredis='redis-server /usr/local/etc/redis.conf &'
+alias safepush="git pull --rebase && bundle install && rdm && rake && git push"
+alias sc="staging-console"
+alias shpush="rake && hpush"
+alias sp="safepush"
+alias squash="git rebase -i master"
+alias staging="git push heroku-staging master"
+alias startredis="redis-server /usr/local/etc/redis.conf &"
 alias t="tmux"
 alias ta="tmux a -t"
-alias tail-logs='heroku logs -t'
+alias tail-logs="heroku logs -t"
 alias ts="tmux new -s"
-alias track='git checkout -t'
-alias u='cd ..'
-alias v='vim'
+alias track="git checkout -t"
+alias u="cd .."
+alias v="vim"
 
 # Heroku staging
-alias staging-console='heroku run console --remote staging'
-alias staging-tail='heroku logs --tail --remote staging'
+alias staging-console="heroku run console --remote staging"
+alias staging-tail="heroku logs --tail --remote staging"
 
 # Heroku production
-alias production-console='heroku run console --remote production'
-alias production-tail='heroku logs --tail --remote production'
+alias production-console="heroku run console --remote production"
+alias production-tail="heroku logs --tail --remote production"
 
 # # Heroku databases
 
-alias db-pull-staging='heroku pg:pull --remote staging --confirm `basename $PWD`-staging'
-alias db-pull-production='rake db:drop && heroku pg:pull --remote production --confirm `basename $PWD`-production'
+alias db-pull-staging="heroku pg:pull --remote staging --confirm `basename $PWD`-staging"
+alias db-pull-production="rake db:drop && heroku pg:pull --remote production --confirm `basename $PWD`-production"
 
-alias db-copy-production-to-staging='heroku pgbackups:restore DATABASE `heroku pgbackups:url --remote production` --remote staging  --confirm `basename $PWD`-staging'
-alias db-backup-production='heroku pgbackups:capture --remote production'
-alias db-backups='heroku pgbackups --remote production'
+alias db-copy-production-to-staging="heroku pgbackups:restore DATABASE `heroku pgbackups:url --remote production` --remote staging  --confirm `basename $PWD`-staging"
+alias db-backup-production="heroku pgbackups:capture --remote production"
+alias db-backups="heroku pgbackups --remote production"
 
-alias levelup-get-production='curl -o ~/Downloads/latest.dump `heroku pgbackups:url --app levelup-production`'
-alias levelup-db-fix='killruby ; rake db:drop:all db:create:all ; pg_restore --verbose --clean --no-acl --no-owner -d levelup_development ~/Downloads/latest.dump -j 8 ; prepdb && rake levelup:dev:create_admin && rails runner CreditCard.delete_all'
+alias levelup-get-production="curl -o ~/Downloads/latest.dump `heroku pgbackups:url --app levelup-production`"
+alias levelup-db-fix="killruby ; rake db:drop:all db:create:all ; pg_restore --verbose --clean --no-acl --no-owner -d levelup_development ~/Downloads/latest.dump -j 8 ; prepdb && rake levelup:dev:create_admin && rails runner CreditCard.delete_all"

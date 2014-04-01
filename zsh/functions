@@ -1,3 +1,6 @@
+function rails-composer {
+  rails new $1 -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb
+}
 function git-new-remote-tracking {
   git checkout -b $1 && git push -u origin $1
 }
