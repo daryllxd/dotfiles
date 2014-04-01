@@ -88,22 +88,3 @@ alias track="git checkout -t"
 alias u="cd .."
 alias v="vim"
 
-# Heroku staging
-alias staging-console="heroku run console --remote staging"
-alias staging-tail="heroku logs --tail --remote staging"
-
-# Heroku production
-alias production-console="heroku run console --remote production"
-alias production-tail="heroku logs --tail --remote production"
-
-# # Heroku databases
-
-alias db-pull-staging="heroku pg:pull --remote staging --confirm `basename $PWD`-staging"
-alias db-pull-production="rake db:drop && heroku pg:pull --remote production --confirm `basename $PWD`-production"
-
-alias db-copy-production-to-staging="heroku pgbackups:restore DATABASE `heroku pgbackups:url --remote production` --remote staging  --confirm `basename $PWD`-staging"
-alias db-backup-production="heroku pgbackups:capture --remote production"
-alias db-backups="heroku pgbackups --remote production"
-
-alias levelup-get-production="curl -o ~/Downloads/latest.dump `heroku pgbackups:url --app levelup-production`"
-alias levelup-db-fix="killruby ; rake db:drop:all db:create:all ; pg_restore --verbose --clean --no-acl --no-owner -d levelup_development ~/Downloads/latest.dump -j 8 ; prepdb && rake levelup:dev:create_admin && rails runner CreditCard.delete_all"
