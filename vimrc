@@ -80,11 +80,12 @@ runtime macros/matchit.vim
 
 let mapleader = "\<space>"
 
-map <leader>ac :sp app/controllers/application_controller.rb<cr>
-vmap <leader>b :<c-u>!git blame <c-r>=expand("%:p") <cr> \| sed -n <c-r>=line("'<") <cr>,<c-r>=line("'>") <cr>p <cr>
-map <leader>bb :!bundle install<cr>
-nmap <leader>bi :source ~/.vimrc<cr>:BundleInstall<cr>
-vmap <leader>bed "td?describe<cr>obed<tab><esc>"tpkdd/end<cr>o<esc>:nohl<cr>
+map <Leader>ac :sp app/controllers/application_controller.rb<cr>
+vmap <Leader>b :<c-u>!git blame <c-r>=expand("%:p") <cr> \| sed -n <c-r>=line("'<") <cr>,<c-r>=line("'>") <cr>p <cr>
+map <Leader>bb :!bundle install<cr>
+nmap <Leader>bi :source ~/.vimrc<cr>:BundleInstall<cr>
+vmap <Leader>bed "td?describe<cr>obed<tab><esc>"tpkdd/end<cr>o<esc>:nohl<cr>
+map <Leader>bp <cr>binding.pry<esc>:w<cr>
 map <Leader>cc :!cucumber --drb %<cr>
 map <Leader>cu :tabularize /\|<cr>
 map <Leader>co ggvg"*y
@@ -93,15 +94,12 @@ map <Leader>cj :Rjspec client/
 map <Leader>cm :Rjmodel client/
 map <Leader>ct :Rtemplate client/
 map <Leader>cv :Rjview client/
-map <Leader>cn :e ~/dropbox/notes/coding-notes.txt<cr>
 map <Leader>d odebugger<cr>puts 'debugger'<esc>:w<cr>
 map <Leader>dr :e ~/dropbox<cr>
 map <Leader>f :vsp spec/factories.rb<cr>
 map <Leader>fix :cnoremap % %<cr>
 map <Leader>gac :gcommit -m -a ""<left>
 map <Leader>gc :gcommit -m ""<left>
-map <Leader>gr :e ~/dropbox/docs/journal<cr>
-map <Leader>gs :gstatus<cr>
 map <Leader>gw :!git add . && git commit -m 'wip' && git push<cr>
 map <Leader>g :tabe Gemfile<cr>
 map <Leader>i mmgg=g`m<cr>
@@ -127,7 +125,7 @@ map <Leader>snc :tabe ~/.vim/snippets/scss.snippets<cr>
 map <Leader>snm :tabe ~/.vim/snippets/markdown.snippets<cr>
 map <Leader>snr :tabe ~/.vim/snippets/ruby.snippets<cr>
 map <Leader>so :so %<cr>
-map <leader>sq j<c-v>}klllcs<esc>:wq<cr>
+map <Leader>sq j<c-v>}klllcs<esc>:wq<cr>
 map <Leader>ss ds)i <esc>:w<cr>
 map <Leader>st :!ruby -Itest % -n "//"<left><left>
 map <Leader>su :RSunittest 
@@ -148,9 +146,6 @@ map <Leader>vv :RVview<cr>
 map <Leader>w <C-w>w
 map <Leader>x :exec getline(".")<cr>
 
-" Markdown surround in.
-nmap <Leader>h visS*<CR>
-
 " Rspec.vim mappings
 let g:rspec_command = 'call Send_to_Tmux("spring rspec {spec}\n")'
 map <Leader>t :call RunCurrentSpecFile()<CR>
@@ -165,16 +160,13 @@ nnoremap <Leader>o :CtrlP<CR>
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
-" Visual Line mode to Leader Leader
-nmap <Leader><Leader> <C-w>w
-
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
 map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR><CR>
 map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
-map <C-h> :nohl<cr>
+map <Leader><Leader> :nohl<cr>
 imap <C-l> :<Space>
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
@@ -190,20 +182,16 @@ nnoremap <C-L> <C-W><C-L>
 set splitbelow
 set splitright
 
-" Emacs-like beginning and end of line.
-imap <c-e> <c-o>$
-imap <c-a> <c-o>^
-
 set nocompatible
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
-set history=500		" keep 500 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
+set history=500                " keep 500 lines of command line history
+set ruler                      " show the cursor position all the time
+set showcmd                    " display incomplete commands
 set autoindent
 set showmatch
 set wrap linebreak nolist
 set backupdir=~/.tmp
-set directory=~/.tmp " Don't clutter my dirs up with swp and tmp files
+set directory=~/.tmp           " Don't clutter my dirs up with swp and tmp files
 set autoread
 set wmh=0
 set viminfo+=!
@@ -214,11 +202,10 @@ set sw=2
 set smarttab
 set noincsearch
 set ignorecase smartcase
-set laststatus=2  " Always show status line.
+set laststatus=2               " Always show status line.
 set relativenumber
-set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
-set autoindent " always set autoindenting on
-" set shell=zsh\ -i
+set gdefault                   " assume the /g flag on :s substitutions to replace all matches in a line
+set autoindent                 " always set autoindenting on
 set background=dark
 set eadirection=ver
 set clipboard=unnamed
@@ -257,10 +244,6 @@ au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
 
 set nofoldenable " Say no to code folding...
-
-command! Q q " Bind :Q to :q
-command! Qall qall 
-
 
 " Disable Ex mode
 map Q <Nop>
@@ -389,7 +372,7 @@ endfunction
 let g:CommandTMaxHeight=50
 let g:CommandTMatchWindowAtTop=1
 
-" Don't wait so long for the next keypress (particularly in ambigious Leader
+" Don't wait so long for the next keypress (particularly in ambigious leader
 " situations.
 set timeoutlen=500
 
