@@ -1,3 +1,5 @@
+" Stolen from Ben Orenstein, Gary Bernhardt, Drew Neil, others
+
 " ========================================================================
 " Vundle stuff
 " ========================================================================
@@ -98,10 +100,8 @@ augroup myfiletypes
     map <Leader>dr :e ~/dropbox<cr>
     map <Leader>f :vsp spec/factories.rb<cr>
     map <Leader>fix :cnoremap % %<cr>
-    map <Leader>gac :gcommit -m -a ""<left>
-    map <Leader>gc :gcommit -m ""<left>
+    map <Leader>ge :tabe Gemfile<cr>
     map <Leader>gw :!git add . && git commit -m 'wip' && git push<cr>
-    map <Leader>g :tabe Gemfile<cr>
     map <Leader>i mmgg=g`m<cr>
     map <Leader>j :commandt app/assets/javascripts<cr>client/
     map <Leader>m :Rmodel 
@@ -145,6 +145,17 @@ augroup myfiletypes
     map <Leader>w <C-w>w
     map <Leader>x :exec getline(".")<cr>
 
+    " CtrlP mappings
+    nnoremap <leader><leader> <c-^>
+    nnoremap <Leader>f :CtrlP<CR>
+    nnoremap <leader>gv :CtrlP app/views<cr>
+    nnoremap <leader>gc :CtrlP app/controllers<cr>
+    nnoremap <leader>gm :CtrlP app/models<cr>
+    nnoremap <leader>gh :CtrlP app/helpers<cr>
+    nnoremap <leader>gl :CtrlP lib<cr>
+    nnoremap <leader>gs :CtrlP app/assets/stylesheets<cr>
+    nnoremap <leader>gt :CtrlP spec<cr>
+
     " Rspec.vim mappings
     let g:rspec_command = 'call Send_to_Tmux("spring rspec {spec}\n")'
     map <Leader>t :call RunCurrentSpecFile()<CR>
@@ -152,8 +163,6 @@ augroup myfiletypes
     map <Leader>a :call RunAllSpecs()<CR>
     map <Leader>ts :call RunNearestSpec()<CR>
 
-    " CtrlP to O since I use it a lot
-    nnoremap <Leader>o :CtrlP<CR>
     :nnoremap <CR> :nohlsearch<cr>
 
     " Region expanding, vvvvv to expand character selections.
@@ -369,10 +378,6 @@ augroup myfiletypes
 endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
-
-" ========================================================================
-" End of things set by me.
-" ========================================================================
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
