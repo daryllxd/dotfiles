@@ -102,12 +102,12 @@ map <Leader>gc :gcommit -m ""<left>
 map <Leader>gr :e ~/dropbox/docs/journal<cr>
 map <Leader>gs :gstatus<cr>
 map <Leader>gw :!git add . && git commit -m 'wip' && git push<cr>
-map <Leader>g :sp Gemfile<cr>
+map <Leader>g :tabe Gemfile<cr>
 map <Leader>i mmgg=g`m<cr>
 map <Leader>j :commandt app/assets/javascripts<cr>client/
 map <Leader>m :Rmodel 
 map <Leader>nn :sp ~/rails_projects/lifelong-learning/coding-notes.md<CR>
-map <Leader>oo :sp ~/rails_projects/lifelong-learning/<CR>
+map <Leader>oo :tabe ~/rails_projects/lifelong-learning/<CR>
 map <Leader>p :set paste<cr>o<esc>"*]p:set nopaste<cr>
 map <Leader>q :q<cr>
 map <Leader>r :vsp config/routes.rb<cr>
@@ -139,7 +139,6 @@ map <Leader>vf :RVfunctional<cr>
 map <Leader>va :tabe ~/.dotfiles/zsh/aliases <CR>
 map <Leader>vg :vsp<cr>:grep 
 map <Leader>vi :tabe ~/.vimrc<CR>
-map <Leader>vl :tabe ~/rails_projects/lifelong-learning<CR>
 map <Leader>vim :tabe ~/rails_projects/lifelong-learning/programming/tools/vim/vimtutor.md<CR>
 map <Leader>vz :tabe ~/.zshrc<CR>
 map <Leader>vu :RVunittest<CR>
