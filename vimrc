@@ -155,6 +155,7 @@ map <Leader>ts :call RunNearestSpec()<CR>
 
 " CtrlP to O since I use it a lot
 nnoremap <Leader>o :CtrlP<CR>
+:nnoremap <CR> :nohlsearch<cr>
 
 " Region expanding, vvvvv to expand character selections.
 vmap v <Plug>(expand_region_expand)
@@ -166,7 +167,6 @@ map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR><CR>
 map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
-map <Leader><Leader> :nohl<cr>
 imap <C-l> :<Space>
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
