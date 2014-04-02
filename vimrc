@@ -27,6 +27,7 @@ Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-haml'
+Bundle 'christoomey/vim-tmux-navigator'
 
 " Ben's Stuff
 Bundle 'ervandew/supertab'
