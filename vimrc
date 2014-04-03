@@ -36,7 +36,6 @@ Bundle 'ervandew/supertab'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
@@ -88,7 +87,6 @@ augroup myfiletypes
     nmap <Leader>bi :source ~/.vimrc<cr>:BundleInstall<cr>
     vmap <Leader>bed "td?describe<cr>obed<tab><esc>"tpkdd/end<cr>o<esc>:nohl<cr>
     map <Leader>bp <cr>binding.pry<esc>:w<cr>
-    map <Leader>cc :!cucumber --drb %<cr>
     map <Leader>cu :tabularize /\|<cr>
     map <Leader>co ggvg"*y
     map <Leader>cc :Rjcollection client/
@@ -97,24 +95,21 @@ augroup myfiletypes
     map <Leader>ct :Rtemplate client/
     map <Leader>cv :Rjview client/
     map <Leader>d odebugger<cr>puts 'debugger'<esc>:w<cr>
-    map <Leader>dr :e ~/dropbox<cr>
     map <Leader>f :vsp spec/factories.rb<cr>
     map <Leader>fix :cnoremap % %<cr>
     map <Leader>ge :tabe Gemfile<cr>
     map <Leader>gw :!git add . && git commit -m 'wip' && git push<cr>
-    map <Leader>i mmgg=g`m<cr>
-    map <Leader>j :commandt app/assets/javascripts<cr>client/
+    map <Leader>i mmgg=G`m 
+    map <Leader>j :tabe app/assets/javascripts<cr>client/
     map <Leader>m :Rmodel 
     map <Leader>nn :sp ~/rails_projects/lifelong-learning/coding-notes.md<CR>
+    map <Leader>o :CtrlP<Space>
     map <Leader>oo :tabe ~/rails_projects/lifelong-learning/<CR>
     map <Leader>p :set paste<cr>o<esc>"*]p:set nopaste<cr>
     map <Leader>q :q<cr>
     map <Leader>r :vsp config/routes.rb<cr>
     map <Leader>ra :%s/
-    map <Leader>rd :!bundle exec rspec % --format documentation<cr>
-    map <Leader>rf :commandtflush<cr>:commandt<cr>
     map <Leader>rs :vsp <c-r>#<cr><c-w>w
-    map <Leader>rt q:?!ruby<cr><cr>
     map <Leader>rw :%s/\s\+$//<cr>:w<cr>
     map <Leader>sc :sp db/schema.rb<cr>
     map <Leader>sg :sp<cr>:grep 
@@ -130,12 +125,10 @@ augroup myfiletypes
     map <Leader>st :!ruby -Itest % -n "//"<left><left>
     map <Leader>su :RSunittest 
     map <Leader>sv :RSview 
-    map <Leader>y :!rspec --drb %<cr>
     map <Leader>u :Runittest<cr>
     map <Leader>vc :RVcontroller<cr>
     map <Leader>vf :RVfunctional<cr>
     map <Leader>va :tabe ~/.dotfiles/zsh/aliases <CR>
-    map <Leader>vg :vsp<cr>:grep 
     map <Leader>vi :tabe ~/.vimrc<CR>
     map <Leader>vim :tabe ~/rails_projects/lifelong-learning/programming/tools/vim/vimtutor.md<CR>
     map <Leader>vz :tabe ~/.zshrc<CR>
@@ -363,7 +356,7 @@ augroup myfiletypes
 
     " Display extra whitespace
     set list listchars=tab:»·,trail:·
-    
+
     """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " MULTIPURPOSE TAB KEY
     " Indent if we're at the beginning of a line. Else, do completion.
@@ -374,42 +367,42 @@ augroup myfiletypes
         return "\<tab>"
       else
         return "\<c-p>"
+      endif
+    endfunction
+    inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+    inoremap <s-tab> <c-n>
+
+    " Switch syntax highlighting on, when the terminal has colors
+    " Also switch on highlighting the last used search pattern.
+    if &t_Co > 2 || has("gui_running")
+      syntax on
+      set hlsearch
     endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <s-tab> <c-n>
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
+    " Only do this part when compiled with support for autocommands.
+    if has("autocmd")
 
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
+      " Enable file type detection.
+      " Use the default filetype settings, so that mail gets 'tw' set to 72,
+      " 'cindent' is on in C files, etc.
+      " Also load indent files, to automatically do language-dependent indenting.
+      filetype plugin indent on
 
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
+      " Put these in an autocmd group, so that we can delete them easily.
+      augroup vimrcEx
+        au!
 
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-    au!
+        " For all text files set 'textwidth' to 78 characters.
+        autocmd FileType text setlocal textwidth=78
 
-    " For all text files set 'textwidth' to 78 characters.
-    autocmd FileType text setlocal textwidth=78
+        " When editing a file, always jump to the last known cursor position.
+        " Don't do it when the position is invalid or when inside an event handler
+        " (happens when dropping a file on gvim).
+        autocmd BufReadPost *
+              \ if line("'\"") > 0 && line("'\"") <= line("$") |
+              \   exe "normal g`\"" |
+              \ endif
 
-    " When editing a file, always jump to the last known cursor position.
-    " Don't do it when the position is invalid or when inside an event handler
-    " (happens when dropping a file on gvim).
-    autocmd BufReadPost *
-          \ if line("'\"") > 0 && line("'\"") <= line("$") |
-          \   exe "normal g`\"" |
-          \ endif
+      augroup END
 
-  augroup END
-
-endif " has("autocmd")
+    endif " has("autocmd")
