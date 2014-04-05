@@ -95,7 +95,7 @@ augroup myfiletypes
     map <Leader>ct :Rtemplate client/
     map <Leader>cv :Rjview client/
     map <Leader>d odebugger<cr>puts 'debugger'<esc>:w<cr>
-    map <Leader>f :vsp spec/factories.rb<cr>
+    map <Leader>f :e spec/factories.rb<cr>
     map <Leader>fix :cnoremap % %<cr>
     map <Leader>ge :tabe Gemfile<cr>
     map <Leader>gw :!git add . && git commit -m 'wip' && git push<cr>
@@ -103,7 +103,7 @@ augroup myfiletypes
     map <Leader>j :tabe app/assets/javascripts<cr>client/
     map <Leader>m :Rmodel 
     map <Leader>nn :sp ~/rails_projects/lifelong-learning/coding-notes.md<CR>
-    map <Leader>o :CtrlP<Space>
+    map <Leader>o :CtrlP<CR>
     map <Leader>oo :tabe ~/rails_projects/lifelong-learning/<CR>
     map <Leader>p :set paste<cr>o<esc>"*]p:set nopaste<cr>
     map <Leader>q :q<cr>
@@ -140,7 +140,6 @@ augroup myfiletypes
 
     " CtrlP mappings
     nnoremap <leader><leader> <c-^>
-    nnoremap <Leader>f :CtrlP<CR>
     nnoremap <leader>gv :CtrlP app/views<cr>
     nnoremap <leader>gc :CtrlP app/controllers<cr>
     nnoremap <leader>gm :CtrlP app/models<cr>
