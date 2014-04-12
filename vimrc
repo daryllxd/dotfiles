@@ -15,7 +15,8 @@ Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 
 " Stuff I installed
-Bundle 'The-NERD-Commenter'
+"Bundle 'The-NERD-Commenter'
+Bundle 'tpope/vim-commentary'
 Bundle 'kien/ctrlp.vim'
 Bundle 'terryma/vim-expand-region'
 Bundle 'thoughtbot/vim-rspec'
