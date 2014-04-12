@@ -9,16 +9,13 @@ call vundle#rc()
 " Let Vundle manage Vundle (required)!
 Bundle 'gmarik/vundle'
 
-" snipMate so I won't cry now
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-
-" Stuff I installed
-"Bundle 'The-NERD-Commenter'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
 Bundle 'tpope/vim-commentary'
 Bundle 'kien/ctrlp.vim'
 Bundle 'terryma/vim-expand-region'
+Bundle 'christoomey/vim-titlecase'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'jgdavey/tslime.vim'
 Bundle 'godlygeek/tabular'
@@ -32,10 +29,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-haml'
 Bundle 'christoomey/vim-tmux-navigator'
 
-" Ben's Stuff
 Bundle 'ervandew/supertab'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
@@ -46,16 +40,16 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'wincent/Command-T'
 Bundle 'koron/nyancat-vim'
-Bundle 'elixir-lang/vim-elixir'
 
 " nelstrom's plugin depends on kana's
 Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 
-" Clojure
+" Other languages
 Bundle 'tpope/vim-foreplay'
 Bundle 'tpope/vim-classpath'
 Bundle 'guns/vim-clojure-static'
+Bundle 'elixir-lang/vim-elixir'
 
 " colors
 Bundle 'nanotech/jellybeans.vim'
