@@ -19,6 +19,8 @@ Bundle 'christoomey/vim-titlecase'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'jgdavey/tslime.vim'
 Bundle 'godlygeek/tabular'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
 
 " Frontend
 Bundle 'othree/html5.vim'
