@@ -139,6 +139,7 @@ augroup myfiletypes
     nnoremap <leader><leader> <c-^>
     nnoremap <leader>gv :CtrlP app/views<cr>
     nnoremap <leader>gc :CtrlP app/controllers<cr>
+    nnoremap <leader>gj :CtrlP app/assets/javascripts<cr>
     nnoremap <leader>gm :CtrlP app/models<cr>
     nnoremap <leader>gh :CtrlP app/helpers<cr>
     nnoremap <leader>gl :CtrlP lib<cr>
