@@ -114,6 +114,7 @@ augroup myfiletypes
     map <Leader>sm :RSmodel 
     map <Leader>sp yss<p>
     map <Leader>snc :tabe ~/.vim/snippets/scss.snippets<cr>
+    map <Leader>snj :tabe ~/.vim/snippets/javascript.snippets<cr>
     map <Leader>snm :tabe ~/.vim/snippets/markdown.snippets<cr>
     map <Leader>snr :tabe ~/.vim/snippets/ruby.snippets<cr>
     map <Leader>so :so %<cr>
