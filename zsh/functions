@@ -58,6 +58,10 @@ function gc {
   git commit -m "$*"
 }
 
+function gcp {
+  git commit -m "$*" && git push
+}
+
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
     fg

@@ -26,6 +26,7 @@ Bundle 'rizzatti/dash.vim'
 Bundle 'othree/html5.vim'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'cakebaker/scss-syntax.vim'
+Bundle "pangloss/vim-javascript"
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-haml'
