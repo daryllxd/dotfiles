@@ -53,6 +53,10 @@ function take {
     cd $1
 }
 
+function gac {
+  git add -A && git commit -m "$*"
+}
+
 # Allows commit message without typing quotes (can't have quotes in the commit msg though).
 function gc {
   git commit -m "$*"
@@ -60,6 +64,14 @@ function gc {
 
 function gcp {
   git commit -m "$*" && git push
+}
+
+function gp {
+  git push "$*" && tput bel
+}
+
+function gpu {
+  git pull $* && tput bel
 }
 
 fancy-ctrl-z () {
