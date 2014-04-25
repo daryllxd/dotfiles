@@ -79,9 +79,7 @@ augroup myfiletypes
 
     let mapleader = "\<space>"
 
-    map <Leader>ac :sp app/controllers/application_controller.rb<cr>
     vmap <Leader>b :<c-u>!git blame <c-r>=expand("%:p") <cr> \| sed -n <c-r>=line("'<") <cr>,<c-r>=line("'>") <cr>p <cr>
-    map <Leader>bb :!bundle install<cr>
     nmap <Leader>bi :source ~/.vimrc<cr>:BundleInstall<cr>
     vmap <Leader>bed "td?describe<cr>obed<tab><esc>"tpkdd/end<cr>o<esc>:nohl<cr>
     map <Leader>bp <cr>binding.pry<esc>:w<cr>
@@ -94,18 +92,15 @@ augroup myfiletypes
     map <Leader>cv :Rjview client/
     map <Leader>d odebugger<cr>puts 'debugger'<esc>:w<cr>
     map <Leader>f :e spec/factories.rb<cr>
-    map <Leader>fix :cnoremap % %<cr>
     map <Leader>ge :tabe Gemfile<cr>
-    map <Leader>gw :!git add . && git commit -m 'wip' && git push<cr>
     map <Leader>i mmgg=G`m 
-    map <Leader>j :tabe app/assets/javascripts<cr>client/
     map <Leader>m :Rmodel 
     map <Leader>nn :sp ~/rails_projects/lifelong-learning/coding-notes.md<CR>
     map <Leader>o :CtrlP<CR>
     map <Leader>oo :tabe ~/rails_projects/lifelong-learning/<CR>
     map <Leader>p :set paste<cr>o<esc>"*]p:set nopaste<cr>
     map <Leader>q :q<cr>
-    map <Leader>r :vsp config/routes.rb<cr>
+    map <Leader>r :e config/routes.rb<cr>
     map <Leader>ra :%s/
     map <Leader>rs :vsp <c-r>#<cr><c-w>w
     map <Leader>rw :%s/\s\+$//<cr>:w<cr>
@@ -113,12 +108,12 @@ augroup myfiletypes
     map <Leader>sg :sp<cr>:grep 
     map <Leader>sj :call openjasminespecinbrowser()<cr>
     map <Leader>sm :RSmodel 
-    map <Leader>sp yss<p>
     map <Leader>snc :tabe ~/.vim/snippets/scss.snippets<cr>
     map <Leader>snj :tabe ~/.vim/snippets/javascript.snippets<cr>
     map <Leader>snm :tabe ~/.vim/snippets/markdown.snippets<cr>
     map <Leader>snr :tabe ~/.vim/snippets/ruby.snippets<cr>
     map <Leader>so :so %<cr>
+    map <Leader>sp :e spec/spec_helper.rb<cr>
     map <Leader>sq j<c-v>}klllcs<esc>:wq<cr>
     map <Leader>ss ds)i <esc>:w<cr>
     map <Leader>st :!ruby -Itest % -n "//"<left><left>
@@ -127,15 +122,12 @@ augroup myfiletypes
     map <Leader>u :Runittest<cr>
     map <Leader>vc :RVcontroller<cr>
     map <Leader>vf :RVfunctional<cr>
-    map <Leader>va :tabe ~/.dotfiles/zsh/aliases <CR>
     map <Leader>vi :tabe ~/.vimrc<CR>
     map <Leader>vim :tabe ~/rails_projects/lifelong-learning/programming/tools/vim/vimtutor.md<CR>
-    map <Leader>vz :tabe ~/.zshrc<CR>
     map <Leader>vu :RVunittest<CR>
     map <Leader>vm :RVmodel<cr>
     map <Leader>vv :RVview<cr>
     map <Leader>w <C-w>w
-    map <Leader>x :exec getline(".")<cr>
 
     " CtrlP mappings
     nnoremap <leader><leader> <c-^>
