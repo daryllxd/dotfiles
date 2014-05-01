@@ -91,6 +91,7 @@ augroup myfiletypes
     map <Leader>ct :Rtemplate client/
     map <Leader>cv :Rjview client/
     map <Leader>d odebugger<cr>puts 'debugger'<esc>:w<cr>
+    map <Leader>do :tabe .env<cr>
     map <Leader>f :e spec/factories.rb<cr>
     map <Leader>ge :tabe Gemfile<cr>
     map <Leader>i mmgg=G`m 
