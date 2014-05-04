@@ -94,8 +94,8 @@ augroup myfiletypes
     map <Leader>do :tabe .env<cr>
     map <Leader>f :e spec/factories.rb<cr>
     map <Leader>ge :tabe Gemfile<cr>
-    map <Leader>i mmgg=G`m 
-    map <Leader>m :Rmodel 
+    map <Leader>i mmgg=G`m
+    map <Leader>m :Rmodel
     map <Leader>nn :sp ~/rails_projects/lifelong-learning/coding-notes.md<CR>
     map <Leader>o :CtrlP<CR>
     map <Leader>oo :tabe ~/rails_projects/lifelong-learning/<CR>
@@ -118,8 +118,8 @@ augroup myfiletypes
     map <Leader>sq j<c-v>}klllcs<esc>:wq<cr>
     map <Leader>ss ds)i <esc>:w<cr>
     map <Leader>st :!ruby -Itest % -n "//"<left><left>
-    map <Leader>su :RSunittest 
-    map <Leader>sv :RSview 
+    map <Leader>su :RSunittest
+    map <Leader>sv :RSview
     map <Leader>u :Runittest<cr>
     map <Leader>vc :RVcontroller<cr>
     map <Leader>vf :RVfunctional<cr>
@@ -326,11 +326,9 @@ augroup myfiletypes
     " situations.
     set timeoutlen=500
 
-    " Don't go past 100 chars on levelup:
-    autocmd BufNewFile,BufRead /Users/ben/code/levelup/*.rb set colorcolumn=100
-
-    " Remove trailing whitespace on save for ruby files.
+    " Remove trailing whitespace on save for ruby and Markdown files.
     au BufWritePre *.rb :%s/\s\+$//e
+    au BufWritePre *.md :%s/\s\+$//e
 
     " Set gutter background to black
     highlight SignColumn ctermbg=black

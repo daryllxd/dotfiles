@@ -419,13 +419,7 @@ snippet defp
 	def ${1:method_name}(${2:params})
 	  ${3}
 	end
-snippet inst
-	institution${1}
-snippet acti
-	activation_group${1}
-snippet prot
-	protocol${1}
-#
+
 # For rspec
 snippet desc
 	describe '${1}' do
@@ -451,6 +445,12 @@ snippet spec
 	require 'spec_helper'
 
 	describe '${1}' do
+	  ${2}
+	end
+snippet specf
+	require 'spec_helper'
+
+	feature '${1}' do
 	  ${2}
 	end
 snippet hc
