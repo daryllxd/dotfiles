@@ -21,6 +21,8 @@ Bundle 'jgdavey/tslime.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
 
 " Frontend
 Bundle 'othree/html5.vim'
@@ -82,7 +84,6 @@ augroup myfiletypes
     vmap <Leader>b :<c-u>!git blame <c-r>=expand("%:p") <cr> \| sed -n <c-r>=line("'<") <cr>,<c-r>=line("'>") <cr>p <cr>
     nmap <Leader>bi :source ~/.vimrc<cr>:BundleInstall<cr>
     vmap <Leader>bed "td?describe<cr>obed<tab><esc>"tpkdd/end<cr>o<esc>:nohl<cr>
-    map <Leader>bp <cr>binding.pry<esc>:w<cr>
     map <Leader>cu :tabularize /\|<cr>
     map <Leader>co ggvg"*y
     map <Leader>cc :Rjcollection client/
@@ -399,3 +400,7 @@ augroup myfiletypes
       augroup END
 
     endif " has("autocmd")
+
+    " Auto-corrections
+
+    iab teh the
