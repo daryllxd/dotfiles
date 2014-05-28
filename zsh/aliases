@@ -86,3 +86,7 @@ alias ta="tmux a -t"
 alias ts="tmux new -s"
 alias v="vim ."
 
+# Work Related
+alias agww="ag --ignore spec/vcr"
+alias wwc="nohup bundle exec rake workers:start count=5 queue=basecamp,facebook,gcal,gmail,gdrive,github,ptracker,trello,yammer > log/workers.log 2>&1 &"
+
