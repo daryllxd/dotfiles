@@ -88,5 +88,7 @@ alias v="vim ."
 
 # Work Related
 alias agww="ag --ignore spec/vcr"
+alias cconsole="bundle exec irb -r ./importer.rb"
+alias kill-resque="$ kill $(ps -ef | grep resque | awk '{print $2}')"
+alias resque-web="bundle exec resque-web ./importer.rb"
 alias wwc="nohup bundle exec rake workers:start count=5 queue=basecamp,facebook,gcal,gmail,gdrive,github,ptracker,trello,yammer > log/workers.log 2>&1 &"
-
