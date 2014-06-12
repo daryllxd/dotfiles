@@ -23,6 +23,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
+Bundle 'scrooloose/syntastic'
 
 " Frontend
 Bundle 'othree/html5.vim'
