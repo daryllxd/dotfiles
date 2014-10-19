@@ -32,6 +32,7 @@ Bundle "pangloss/vim-javascript"
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-haml'
+Bundle 'slim-template/vim-slim'
 Bundle 'christoomey/vim-tmux-navigator'
 
 Bundle 'ervandew/supertab'
