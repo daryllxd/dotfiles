@@ -32,5 +32,5 @@ cdpath=($HOME/rails_projects)
 
 # PATH stuff
 export PATH=bin:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:~/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"

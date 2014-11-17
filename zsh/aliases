@@ -88,6 +88,7 @@ alias stoppostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres
 alias ta="tmux a -t"
 alias ts="tmux new -s"
 alias v="vim ."
+alias whenever="whenever --update-crontab store"
 
 # Work Related
 alias agww="ag --ignore spec/vcr"
