@@ -140,7 +140,7 @@ augroup myfiletypes
     nnoremap <leader>gm :CtrlP app/models<cr>
     nnoremap <leader>gh :CtrlP app/helpers<cr>
     nnoremap <leader>gl :CtrlP lib<cr>
-    nnoremap <leader>gs :CtrlP app/assets/stylesheets<cr>
+    nnoremap <leader>gs :CtrlP app/services<cr>
     nnoremap <leader>gt :CtrlP spec<cr>
 
     " Rspec.vim mappings
@@ -171,6 +171,7 @@ augroup myfiletypes
     map <C-p> :cp<CR>
 
     " Navigating across splits
+    nnoremap <C-H> <C-W><C-H>
     nnoremap <C-J> <C-W><C-J>
     nnoremap <C-K> <C-W><C-K>
     nnoremap <C-L> <C-W><C-L>
