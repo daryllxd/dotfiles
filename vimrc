@@ -34,7 +34,6 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-haml'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'slim-template/vim-slim'
-Bundle 'christoomey/vim-tmux-navigator'
 
 Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-bundler'
@@ -145,7 +144,7 @@ augroup myfiletypes
     nnoremap <leader>gt :CtrlP spec<cr>
 
     " Rspec.vim mappings
-    let g:rspec_command = 'call Send_to_Tmux("spring rspec {spec}\n")'
+    let g:rspec_command = '!spring rspec {spec}'
     map <Leader>t :call RunCurrentSpecFile()<CR>
     map <Leader>tl :call RunLastSpec()<CR>
     map <Leader>a :call RunAllSpecs()<CR>
@@ -160,7 +159,7 @@ augroup myfiletypes
     " Edit another file in the same directory as the current file
     " uses expression to extract path from current file's path
     map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR><CR>
-    map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
+    map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR><cr>
     map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
     imap <C-l> :<Space>
