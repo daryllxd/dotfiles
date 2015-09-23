@@ -91,8 +91,13 @@ alias v="vim ."
 alias whenever="whenever --update-crontab store"
 
 # Work Related
+alias deploy="bundle exec cap staging deploy"
+alias sshc="ssh commutyble@54.172.147.102"
+alias sshg="ssh ctgrp@54.152.55.194"
+alias sshca="ssh ubuntu@54.152.55.194"
 alias agww="ag --ignore spec/vcr"
 alias cconsole="bundle exec irb -r ./importer.rb"
 alias kill-resque="kill $(ps -ef | grep resque | awk '{print $2}')"
 alias resque-web="bundle exec resque-web ./importer.rb"
 alias wwc="nohup bundle exec rake workers:start COUNT=5 QUEUE=basecamp,facebook,gcal,gmail,gdrive,github,ptracker,trello,yammer > log/workers.log 2>&1 &"
+
