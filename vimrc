@@ -24,6 +24,7 @@ Bundle 'rizzatti/funcoo.vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " Frontend
 Bundle 'othree/html5.vim'
@@ -61,6 +62,16 @@ Bundle 'elixir-lang/vim-elixir'
 " colors
 Bundle 'nanotech/jellybeans.vim'
 colorscheme jellybeans
+
+" powerline
+
+set guifont=Inconsolata\ for\ Powerline:h15
+let g:Powerline_symbols = 'fancy'
+set encoding=utf-8
+set t_Co=256
+set fillchars+=stl:\ ,stlnc:\
+set term=xterm-256color
+set termencoding=utf-8
 
 " ================
 " ruby stuff
