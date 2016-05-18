@@ -23,6 +23,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
+Bundle 'christoomey/vim-tmux-navigator'
 
 " Frontend
 Bundle 'othree/html5.vim'
@@ -144,7 +145,8 @@ augroup myfiletypes
     nnoremap <leader>gt :CtrlP spec<cr>
 
     " Rspec.vim mappings
-    let g:rspec_command = '!spring rspec {spec}'
+    let g:rspec_command = '!bundle exec spring rspec {spec}'
+    " let g:rspec_command = '!bundle exec rspec {spec}'
     map <Leader>t :call RunCurrentSpecFile()<CR>
     map <Leader>tl :call RunLastSpec()<CR>
     map <Leader>a :call RunAllSpecs()<CR>
@@ -163,8 +165,8 @@ augroup myfiletypes
     map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
     imap <C-l> :<Space>
-    map <C-s> <esc>:w<CR>
-    imap <C-s> <esc>:w<CR>
+    map <C-s> <esc>:w!<CR>
+    imap <C-s> <esc>:w!<CR>
     map <C-t> <esc>:tabnew<CR>
     map <C-x> <C-w>c
     map <C-n> :cn<CR>

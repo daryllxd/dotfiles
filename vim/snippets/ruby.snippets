@@ -433,7 +433,8 @@ snippet it
 	end
 snippet con
 	context '${1}' do
-	  ${2}
+	  it '${2}' do
+	  end
 	end
 snippet bed
 	before do
@@ -454,6 +455,15 @@ snippet specf
 
 	feature '${1}' do
 	  ${2}
+	end
+snippet specr
+	require 'rails_helper'
+
+	describe ${1} do
+	  context '' do
+	    it '' do
+	    end
+	  end
 	end
 snippet hc
 	expect(page).to have_content(${1})
