@@ -3,65 +3,67 @@
 " ========================================================================
 " Vundle stuff
 " ========================================================================
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " Let Vundle manage Vundle (required)!
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-vinegar'
-Bundle 'kien/ctrlp.vim'
-Bundle 'terryma/vim-expand-region'
-Bundle 'christoomey/vim-titlecase'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'jgdavey/tslime.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
-Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-vinegar'
+Plugin 'kien/ctrlp.vim'
+Plugin 'terryma/vim-expand-region'
+Plugin 'christoomey/vim-titlecase'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'jgdavey/tslime.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'rizzatti/funcoo.vim'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " Frontend
-Bundle 'othree/html5.vim'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'cakebaker/scss-syntax.vim'
-Bundle "pangloss/vim-javascript"
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-haml'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'slim-template/vim-slim'
+Plugin 'othree/html5.vim'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-haml'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'slim-template/vim-slim'
 
-Bundle 'ervandew/supertab'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'wincent/Command-T'
-Bundle 'koron/nyancat-vim'
+Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'wincent/Command-T'
+Plugin 'koron/nyancat-vim'
 
 " nelstrom's plugin depends on kana's
-Bundle 'kana/vim-textobj-user'
-Bundle 'nelstrom/vim-textobj-rubyblock'
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
 
 " Other languages
-Bundle 'tpope/vim-foreplay'
-Bundle 'tpope/vim-classpath'
-Bundle 'guns/vim-clojure-static'
-Bundle 'elixir-lang/vim-elixir'
+Plugin 'tpope/vim-foreplay'
+Plugin 'tpope/vim-classpath'
+Plugin 'guns/vim-clojure-static'
+Plugin 'elixir-lang/vim-elixir'
 
 " colors
-Bundle 'nanotech/jellybeans.vim'
+Plugin 'nanotech/jellybeans.vim'
 colorscheme jellybeans
+
+call vundle#end()
 
 " powerline
 
