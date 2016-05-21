@@ -59,10 +59,6 @@ Plugin 'tpope/vim-classpath'
 Plugin 'guns/vim-clojure-static'
 Plugin 'elixir-lang/vim-elixir'
 
-" colors
-Plugin 'nanotech/jellybeans.vim'
-colorscheme jellybeans
-
 call vundle#end()
 
 " powerline
