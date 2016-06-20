@@ -38,3 +38,4 @@ export PATH=bin:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/l
 # eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
