@@ -12,6 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-vinegar'
 Plugin 'kien/ctrlp.vim'
@@ -93,7 +94,7 @@ augroup myfiletypes
     let mapleader = "\<space>"
 
     vmap <Leader>b :<c-u>!git blame <c-r>=expand("%:p") <cr> \| sed -n <c-r>=line("'<") <cr>,<c-r>=line("'>") <cr>p <cr>
-    nmap <Leader>bi :source ~/.vimrc<cr>:BundleInstall<cr>
+    nmap <Leader>bi :source ~/.vimrc<cr>:PluginInstall<cr>
     vmap <Leader>bed "td?describe<cr>obed<tab><esc>"tpkdd/end<cr>o<esc>:nohl<cr>
     map <Leader>cu :tabularize /\|<cr>
     map <Leader>co ggvg"*y
