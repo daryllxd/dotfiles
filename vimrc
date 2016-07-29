@@ -12,7 +12,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-vinegar'
 Plugin 'kien/ctrlp.vim'
@@ -147,6 +146,7 @@ augroup myfiletypes
     nnoremap <leader><leader> <c-^>
     nnoremap <leader>gv :CtrlP app/views<cr>
     nnoremap <leader>gc :CtrlP app/controllers<cr>
+    nnoremap <leader>gf :CtrlP spec/factories<cr>
     nnoremap <leader>gj :CtrlP app/assets/javascripts<cr>
     nnoremap <leader>gm :CtrlP app/models<cr>
     nnoremap <leader>gh :CtrlP app/helpers<cr>
