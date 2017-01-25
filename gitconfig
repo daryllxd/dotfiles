@@ -1,6 +1,6 @@
 [user]
 	name = Daryll Santos
-	email = daryll.santos@@gmail.com 
+	email = daryll.santos@gmail.com
 [alias]
 	co = checkout
         cleanup = !git remote prune origin && git gc && git clean -df && git stash clear
