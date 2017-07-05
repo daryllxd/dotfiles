@@ -28,13 +28,10 @@ source $HOME/.dotfiles/zsh_prompt
 source ~/.bin/tmuxinator.zsh
 
 # Source cdpath
-cdpath=($HOME/rails_projects)
+cdpath=($HOME/Documents/rails_projects)
 
 # PATH stuff
-export PATH=bin:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin
-# export PATH="$HOME/.rbenv/bin:~/.rbenv/shims:$PATH"
-# eval "$(rbenv init -)"
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init -)"
+export PATH=bin:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/scripts
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+export PATH="/usr/local/opt/qt5/bin:$PATH"
