@@ -11,7 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-commentary'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-vinegar'
@@ -47,7 +47,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-unimpaired'
-" Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'wincent/Command-T'
 Plugin 'koron/nyancat-vim'
 
@@ -104,7 +104,8 @@ nmap <Leader>bi :source ~/.vimrc<cr>:PluginInstall<cr>
 vmap <Leader>bed "td?describe<cr>obed<tab><esc>"tpkdd/end<cr>o<esc>:nohl<cr>
 map <Leader>cu :tabularize /\|<cr>
 map <Leader>co ggvg"*y
-map <Leader>cc :Rjcollection client/
+" map <Leader>cc :Rjcollection client/
+map <Leader>cc :sp ~/Documents/lifelong-learning/_cheat-sheets/_global.md<CR>
 map <Leader>cj :Rjspec client/
 map <Leader>cm :Rjmodel client/
 map <Leader>ct :Rtemplate client/
@@ -115,9 +116,9 @@ map <Leader>f :e spec/factories.rb<cr>
 map <Leader>ge :tabe Gemfile<cr>
 map <Leader>i mmgg=G`m
 map <Leader>m :Rmodel
-map <Leader>nn :sp ~/rails_projects/lifelong-learning/coding-notes.md<CR>
+map <Leader>nn :sp ~/Documents/lifelong-learning/coding-notes.md<CR>
 map <Leader>o :CtrlP<CR>
-map <Leader>oo :tabe ~/rails_projects/lifelong-learning/<CR>
+map <Leader>coo :tabe ~/Documents/lifelong-learning/<CR>
 map <Leader>p :set paste<cr>o<esc>"*]p:set nopaste<cr>
 map <Leader>q :q<cr>
 map <Leader>r :e config/routes.rb<cr>
@@ -131,7 +132,7 @@ map <Leader>sm :RSmodel
 map <Leader>snc :tabe ~/.vim/snippets/scss.snippets<cr>
 map <Leader>snj :tabe ~/.vim/snippets/javascript.snippets<cr>
 map <Leader>snm :tabe ~/.vim/snippets/markdown.snippets<cr>
-map <Leader>snr :tabe ~/.vim/snippets/ruby.snippets<cr>
+map <Leader>snr :tabe ~/.vim/bundle/vim-snippets/snippets/ruby.snippets<cr>
 map <Leader>so :so %<cr>
 map <Leader>sp :e spec/spec_helper.rb<cr>
 map <Leader>sq j<c-v>}klllcs<esc>:wq<cr>
@@ -194,6 +195,10 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 set splitbelow
 set splitright
 
@@ -312,7 +317,7 @@ endfunction
 nmap <C-W>u :call MergeTabs()<CR>
 
 
-inoremap <Tab> <C-P>
+" inoremap <Tab> <C-P>
 
 " Let's be reasonable, shall we?
 nmap k gk
@@ -426,3 +431,8 @@ endif " has("autocmd")
 " Auto-corrections
 
 iab teh the
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
