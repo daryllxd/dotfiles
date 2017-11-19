@@ -98,6 +98,8 @@ alias ts="tmux new -s"
 alias v="vim ."
 alias vk="killall -9 vim"
 alias whenever="whenever --update-crontab store"
+alias onwifi='networksetup -setairportpower en0 on'
+alias offwifi='networksetup -setairportpower en0 off'
 alias ys="yarn start"
 
 # Work Related
