@@ -1,3 +1,8 @@
+function ytdl {
+  say 'downloading'
+  nohup sh -c "youtube-dl -o '~/Downloads/trainer/watch/%(title)s' $1 && say 'download finished' &" > ~/Downloads/trainer/watch/nohup.out
+}
+
 function rails-composer {
   rails new $1 -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb
 }
