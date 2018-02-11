@@ -1,6 +1,12 @@
 function ytdl {
   say 'downloading'
-  nohup sh -c "youtube-dl -o '~/Downloads/trainer/watch/%(title)s' $1 && say 'download finished' &" > ~/Downloads/trainer/watch/nohup.out
+  nohup sh -c "youtube-dl -o '~/Desktop/trainer/watch/`date +%Y-%m-%d` %(title)s' $1 && say 'download finished' &" > ~/Desktop/trainer/watch/nohup.out
+}
+
+function itermFront {
+  osascript -e 'tell application "System Events" to tell process "iTerm2"' \
+            -e 'set frontmost to true' \
+            -e 'end tell'
 }
 
 function rails-composer {
