@@ -1,3 +1,7 @@
+function tabs {
+  tabset $* && tmux
+}
+
 function ytdl {
   say 'downloading'
   nohup sh -c "youtube-dl -o '~/Desktop/trainer/watch/`date +%Y-%m-%d` %(title)s' $1 && say 'download finished' &" > ~/Desktop/trainer/watch/nohup.out
