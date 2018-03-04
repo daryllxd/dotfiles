@@ -28,10 +28,12 @@ source $HOME/.dotfiles/zsh_prompt
 source ~/.bin/tmuxinator.zsh
 
 # Source cdpath
-cdpath=($HOME/Documents/rails_projects)
+cdpath=($HOME/Documents/rails_projects $HOME/Desktop/trainer)
 
 # PATH stuff
 export PATH=bin:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/scripts
+export ERL_AFLAGS="-kernel shell_history enabled"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="/usr/local/opt/qt5/bin:$PATH"
+
