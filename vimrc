@@ -9,13 +9,13 @@ call vundle#begin()
 " Let Vundle manage Vundle (required)!
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'tpope/vim-commentary'
-Plugin 'honza/vim-snippets'
-Plugin 'tpope/vim-vinegar'
-Plugin 'kien/ctrlp.vim'
+Plugin 'MarcWeber/vim-addon-mw-utils' " vim: interpret a file by function and cache file automatically
+Plugin 'tomtom/tlib_vim' " utility functions for vim
+Plugin 'SirVer/ultisnips' " snippets
+Plugin 'honza/vim-snippets' " snippet files for languages
+Plugin 'tpope/vim-commentary' " for commenting stuff out
+Plugin 'tpope/vim-vinegar' " for splitting windows
+Plugin 'kien/ctrlp.vim' " fuzzy file finder
 Plugin 'terryma/vim-expand-region'
 Plugin 'christoomey/vim-titlecase'
 Plugin 'thoughtbot/vim-rspec'
@@ -23,21 +23,17 @@ Plugin 'jgdavey/tslime.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'rizzatti/funcoo.vim'
 Plugin 'mattn/webapi-vim'
-Plugin 'mattn/gist-vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " Frontend
-Plugin 'othree/html5.vim'
+" Plugin 'othree/html5.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'pangloss/vim-javascript'
-Plugin 'kchmck/vim-coffee-script'
+Plugin 'mxw/vim-jsx'
 Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-haml'
-Plugin 'digitaltoad/vim-jade'
 Plugin 'slim-template/vim-slim'
-Plugin 'leafgarland/typescript-vim'
 
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-bundler'
@@ -48,8 +44,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'wincent/Command-T'
-Plugin 'koron/nyancat-vim'
+" Plugin 'wincent/Command-T'
 
 " nelstrom's plugin depends on kana's
 Plugin 'kana/vim-textobj-user'
@@ -99,20 +94,11 @@ runtime macros/matchit.vim
 
 let mapleader = "\<space>"
 
-vmap <Leader>b :<c-u>!git blame <c-r>=expand("%:p") <cr> \| sed -n <c-r>=line("'<") <cr>,<c-r>=line("'>") <cr>p <cr>
 nmap <Leader>bi :source ~/.vimrc<cr>:PluginInstall<cr>
-vmap <Leader>bed "td?describe<cr>obed<tab><esc>"tpkdd/end<cr>o<esc>:nohl<cr>
 map <Leader>cu :tabularize /\|<cr>
 map <Leader>co ggvg"*y
-" map <Leader>cc :Rjcollection client/
 map <Leader>cc :sp ~/Documents/lifelong-learning/_cheat-sheets/_global.md<CR>
-map <Leader>cj :Rjspec client/
-map <Leader>cm :Rjmodel client/
-map <Leader>ct :Rtemplate client/
-map <Leader>cv :Rjview client/
-map <Leader>d odebugger<cr>puts 'debugger'<esc>:w<cr>
 map <Leader>do :tabe .env<cr>
-map <Leader>f :e spec/factories.rb<cr>
 map <Leader>ge :tabe Gemfile<cr>
 map <Leader>i mmgg=G`m
 map <Leader>m :Rmodel
@@ -125,16 +111,11 @@ map <Leader>r :e config/routes.rb<cr>
 map <Leader>ra :%s/
 map <Leader>rs :vsp <c-r>#<cr><c-w>w
 map <Leader>rw :%s/\s\+$//<cr>:w<cr>
-map <Leader>sc :sp db/schema.rb<cr>
-map <Leader>sg :sp<cr>:grep 
-map <Leader>sj :call openjasminespecinbrowser()<cr>
-map <Leader>sm :RSmodel 
 map <Leader>snc :tabe ~/.vim/snippets/scss.snippets<cr>
 map <Leader>snj :tabe ~/.vim/snippets/javascript.snippets<cr>
 map <Leader>snm :tabe ~/.vim/snippets/markdown.snippets<cr>
 map <Leader>snr :tabe ~/.vim/bundle/vim-snippets/snippets/ruby.snippets<cr>
 map <Leader>so :so %<cr>
-map <Leader>sp :e spec/spec_helper.rb<cr>
 map <Leader>sq j<c-v>}klllcs<esc>:wq<cr>
 map <Leader>ss ds)i <esc>:w<cr>
 map <Leader>st :!ruby -Itest % -n "//"<left><left>
@@ -195,10 +176,6 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
 set splitbelow
 set splitright
 
@@ -291,50 +268,16 @@ au BufRead,BufNewFile *.md,*.txt setlocal spell
 " Make md files recognizable as markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 
-" Make hamlc files recognizable as haml
-au BufRead,BufNewFile *.hamlc set filetype=haml
-
 " Make Ctrl-P plugin faster for git projects
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 let g:ctrlp_use_caching = 0
-
-" Merge a tab into a split in the previous window
-function! MergeTabs()
-  if tabpagenr() == 1
-    return
-  endif
-  let bufferName = bufname("%")
-  if tabpagenr("$") == tabpagenr()
-    close!
-  else
-    close!
-    tabprev
-  endif
-  split
-  execute "buffer " . bufferName
-endfunction
-
-nmap <C-W>u :call MergeTabs()<CR>
-
-
-" inoremap <Tab> <C-P>
 
 " Let's be reasonable, shall we?
 nmap k gk
 nmap j gj
 
-
-" Set up some useful Rails.vim bindings for working with Backbone.js
-autocmd User Rails Rnavcommand template    app/assets/templates               -glob=**/*  -suffix=.jst.ejs
-autocmd User Rails Rnavcommand jmodel      app/assets/javascripts/models      -glob=**/*  -suffix=.coffee
-autocmd User Rails Rnavcommand jview       app/assets/javascripts/views       -glob=**/*  -suffix=.coffee
-autocmd User Rails Rnavcommand jcollection app/assets/javascripts/collections -glob=**/*  -suffix=.coffee
-autocmd User Rails Rnavcommand jrouter     app/assets/javascripts/routers     -glob=**/*  -suffix=.coffee
-autocmd User Rails Rnavcommand jspec       spec/javascripts                   -glob=**/*  -suffix=.coffee
-
 " Don't add the comment prefix when I hit enter or o/O on a comment line.
 set formatoptions-=or
-
 
 function! OpenJasmineSpecInBrowser()
   let filename = expand('%')
@@ -436,3 +379,13 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+" CtrlP caching
+
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_follow_symlinks = 0
+
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_custom_ignore = '\v[\/](tmp|node_modules|target|dist|daryllxd-db-backup|bower_components|public/api-docs/|client/bower_components/)|(\.(swp|ico|git|svn))$'
+endif
