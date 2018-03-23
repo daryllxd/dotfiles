@@ -27,10 +27,11 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " Frontend
-" Plugin 'othree/html5.vim'
+Plugin 'othree/html5.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'epilande/vim-react-snippets'
 Plugin 'mxw/vim-jsx'
 Plugin 'tpope/vim-markdown'
 Plugin 'slim-template/vim-slim'
@@ -44,7 +45,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
-" Plugin 'wincent/Command-T'
+Plugin 'wincent/Command-T'
 
 " nelstrom's plugin depends on kana's
 Plugin 'kana/vim-textobj-user'
@@ -208,6 +209,10 @@ set eadirection=ver
 set clipboard+=unnamed
 set go+=a
 
+" The most important thing. Use another regex engine which is ACTUALLY FASTER.
+" https://stackoverflow.com/questions/19030290/syntax-highlighting-causes-terrible-lag-in-vim
+set re=1
+
 " Remove swap file (not sure if correct)
 set backup 
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp 
@@ -241,7 +246,11 @@ au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 
 set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
 
-set nofoldenable " Say no to code folding...
+
+let ruby_fold = 1 " Enable cold folding in Ruby
+let ruby_foldable_groups = '#' " Only fold comments (to ecnourage documentation)
+" Code folding color is black
+hi Folded ctermbg=016
 
 " Disable Ex mode
 map Q <Nop>
@@ -252,7 +261,6 @@ map K <Nop>
 " When loading text files, wrap them and don't split up words.
 au BufNewFile,BufRead *.txt setlocal lbr
 au BufNewFile,BufRead *.txt setlocal nolist " Don't display whitespace
-
 " Better? completion on command line
 set wildmenu
 " What to do when I press 'wildchar'. Worth tweaking to see what feels right.
@@ -304,9 +312,9 @@ au BufWritePre *.md :%s/\s\+$//e
 " Set gutter background to black
 highlight SignColumn ctermbg=black
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RENAME CURRENT FILE (thanks Gary Bernhardt)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! RenameFile()
   let old_name = expand('%')
   let new_name = input('New file name: ', expand('%'), 'file')
