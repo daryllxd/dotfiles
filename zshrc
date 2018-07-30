@@ -20,11 +20,12 @@ stty start undef
 stty stop undef
 
 # Sourcing of other files
-source $HOME/.dotfiles/zsh/aliases
-source $HOME/.dotfiles/zsh/functions
+# source $HOME/.dotfiles/zsh/aliases
+source $HOME/Documents/rails_projects/dotfiles/zsh/aliases
+source $HOME/Documents/rails_projects/dotfiles/zsh/functions
 
 # Source prompt
-source $HOME/.dotfiles/zsh_prompt
+source $HOME/Documents/rails_projects/dotfiles/zsh_prompt
 source ~/.bin/tmuxinator.zsh
 
 # Source cdpath
@@ -37,3 +38,4 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="/usr/local/opt/qt5/bin:$PATH"
 
+if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
