@@ -4,21 +4,13 @@ function tabs {
 
 function ytdl {
   say 'downloading'
-  nohup sh -c "youtube-dl -o '~/Desktop/trainer/watch/`date +%Y-%m-%d` %(title)s' $1 && say 'download finished' &" > ~/Desktop/trainer/watch/nohup.out
+  nohup sh -c "youtube-dl -o '~/Downloads/trainer/watch/`date +%Y-%m-%d` %(title)s' $1 && say 'download finished' &" > ~/Downloads/trainer/watch/nohup.out
 }
 
 function itermFront {
   osascript -e 'tell application "System Events" to tell process "iTerm2"' \
             -e 'set frontmost to true' \
             -e 'end tell'
-}
-
-function rails-composer {
-  rails new $1 -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb
-}
-
-function title {
-    echo -ne "\033]0;"$*"\007"
 }
 
 function git-new-remote-tracking {
@@ -32,11 +24,6 @@ function git_branch_name {
 
 function mkd() {
   mkdir -p "$@" && cd "$@"
-}
-
-function git-done {
-  branch=`git_branch_name`
-    killruby ; spring stop ; git checkout master && git merge $branch --ff-only && bundle install && rake db:migrate db:test:prepare && rake && git push && git branch -D $branch && git push origin :$branch
 }
 
 function git-nuke {
@@ -105,4 +92,3 @@ fancy-ctrl-z () {
 
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
-
