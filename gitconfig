@@ -20,6 +20,7 @@
 
 [alias]
       lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	restage = update-index --again
 [help]
 	autocorrect = 1
 [branch]
@@ -33,3 +34,9 @@
 	user = daryllxd
 [merge]
         ff = only
+[pull]
+	rebase = true
+[credential]
+	helper = cache
+[rebase]
+	autosquash = true

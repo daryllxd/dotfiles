@@ -33,8 +33,10 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'epilande/vim-react-snippets'
 Plugin 'mxw/vim-jsx'
-Plugin 'tpope/vim-markdown'
+Bundle 'tpope/vim-markdown'
 Plugin 'slim-template/vim-slim'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'kchmck/vim-coffee-script'
 
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-bundler'
@@ -96,9 +98,7 @@ runtime macros/matchit.vim
 let mapleader = "\<space>"
 
 nmap <Leader>bi :source ~/.vimrc<cr>:PluginInstall<cr>
-map <Leader>cu :tabularize /\|<cr>
-map <Leader>co ggvg"*y
-map <Leader>cc :sp ~/Documents/lifelong-learning/_cheat-sheets/_global.md<CR>
+map <Leader>cu :Tabularize /:\zs<cr>
 map <Leader>do :tabe .env<cr>
 map <Leader>ge :tabe Gemfile<cr>
 map <Leader>i mmgg=G`m
@@ -109,6 +109,7 @@ map <Leader>coo :tabe ~/Documents/lifelong-learning/<CR>
 map <Leader>p :set paste<cr>o<esc>"*]p:set nopaste<cr>
 map <Leader>q :q<cr>
 map <Leader>r :e config/routes.rb<cr>
+map <Leader>e :e config/locales/client.en.yml<cr>
 map <Leader>ra :%s/
 map <Leader>rs :vsp <c-r>#<cr><c-w>w
 map <Leader>rw :%s/\s\+$//<cr>:w<cr>
@@ -247,7 +248,6 @@ au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
 
 
-let ruby_fold = 1 " Enable cold folding in Ruby
 let ruby_foldable_groups = '#' " Only fold comments (to ecnourage documentation)
 " Code folding color is black
 hi Folded ctermbg=016
