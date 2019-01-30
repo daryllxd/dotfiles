@@ -35,6 +35,7 @@ task :install do
 
   # Need to do this to make vim use RVM's ruby version
   puts "Moving zshenv to zshrc"
+  system %Q{sudo touch /etc/zshenv}
   system %Q{sudo mv /etc/zshenv /etc/zshrc}
 
   system %Q{mkdir ~/.tmp}
