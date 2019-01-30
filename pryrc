@@ -1,7 +1,5 @@
 old_print = Pry.config.print
 
-# require "awesome_print"
-
 if Kernel.const_defined?("Rails") then
   require File.join(Rails.root,"config","environment")
   require 'rails/console/app'
@@ -12,8 +10,6 @@ if Kernel.const_defined?("Rails") then
     end
   end
 end
-
-# AwesomePrint.pry!
 
 Pry.config.commands.alias_command "e", "exit"
 Pry.config.commands.alias_command "r", "reload!"
