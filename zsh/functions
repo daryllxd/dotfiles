@@ -68,6 +68,11 @@ function gc {
   git commit -m "$*"
 }
 
+# Commit message that overrides no-verify
+function gcnv {
+  git commit --no-verify -m "$*"
+}
+
 function gcp {
   git commit -m "$*" && git push
 }
