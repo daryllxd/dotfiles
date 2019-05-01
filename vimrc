@@ -25,6 +25,7 @@ Plugin 'rizzatti/funcoo.vim'
 Plugin 'mattn/webapi-vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'chiedo/vim-px-to-em'
 
 " Frontend
 Plugin 'othree/html5.vim'
@@ -37,6 +38,7 @@ Bundle 'tpope/vim-markdown'
 Plugin 'slim-template/vim-slim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'leafgarland/typescript-vim'
 
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-bundler'
@@ -139,11 +141,13 @@ nnoremap <leader>gv :CtrlP app/views<cr>
 nnoremap <leader>gc :CtrlP app/controllers<cr>
 nnoremap <leader>gf :CtrlP spec/factories<cr>
 nnoremap <leader>gj :CtrlP app/assets/javascripts<cr>
+nnoremap <leader>gz :CtrlP app/assets/stylesheets<cr>
 nnoremap <leader>gm :CtrlP app/models<cr>
 nnoremap <leader>gh :CtrlP app/helpers<cr>
 nnoremap <leader>gl :CtrlP lib<cr>
 nnoremap <leader>gs :CtrlP app/services<cr>
 nnoremap <leader>gt :CtrlP spec<cr>
+nnoremap <leader>gtr :CtrlP translations<cr>
 
 " Rspec.vim mappings
 let g:rspec_command = '!bundle exec spring rspec {spec}'
