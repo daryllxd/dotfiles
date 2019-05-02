@@ -26,6 +26,7 @@ Plugin 'mattn/webapi-vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'chiedo/vim-px-to-em'
+Plugin 'w0rp/ale'
 
 " Frontend
 Plugin 'othree/html5.vim'
