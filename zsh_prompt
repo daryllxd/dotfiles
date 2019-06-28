@@ -45,4 +45,4 @@ git_custom_status() {
 # fi
 
 # basic prompt on the left
-PROMPT='😱 😱 😱  %{$fg[cyan]%}%~% %(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
+PROMPT='😱 😱 😱  $(git_branch_name) %{$fg[cyan]%}%~% %(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
