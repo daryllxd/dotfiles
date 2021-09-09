@@ -28,12 +28,15 @@ source $HOME/Documents/rails_projects/dotfiles/zsh/functions
 source $HOME/Documents/rails_projects/dotfiles/zsh_prompt
 source ~/.bin/tmuxinator.zsh
 
+eval $(thefuck --alias)
+
 # Source cdpath
 cdpath=($HOME/Documents/rails_projects $HOME/Desktop/trainer)
 
 # PATH stuff
 export ERL_AFLAGS="-kernel shell_history enabled"
 export PATH="$HOME/.rbenv/bin:$PATH"
+# export PATH="bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="/usr/local/opt/qt5/bin:$PATH"
 
