@@ -28,23 +28,29 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'chiedo/vim-px-to-em'
 Plugin 'w0rp/ale'
 
+" Carbon
+Plugin 'kristijanhusak/vim-carbon-now-sh'
+
 " Frontend
 Plugin 'othree/html5.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'pangloss/vim-javascript'
-Plugin 'epilande/vim-react-snippets'
-Plugin 'mxw/vim-jsx'
+" Plugin 'epilande/vim-react-snippets'
+" Plugin 'mxw/vim-jsx'
+Plugin 'posva/vim-vue'
 Bundle 'tpope/vim-markdown'
-Plugin 'slim-template/vim-slim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'amadeus/vim-mjml'
+Plugin 'janko/vim-test'
 
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-rails'
@@ -117,8 +123,7 @@ map <Leader>ra :%s/
 map <Leader>rs :vsp <c-r>#<cr><c-w>w
 map <Leader>rw :%s/\s\+$//<cr>:w<cr>
 map <Leader>snc :tabe ~/.vim/snippets/scss.snippets<cr>
-map <Leader>snj :tabe ~/.vim/snippets/javascript.snippets<cr>
-map <Leader>snm :tabe ~/.vim/snippets/markdown.snippets<cr>
+map <Leader>snj :tabe ~/.vim/bundle/vim-snippets/snippets/javascript/javascript-jasmine.snippets<cr>
 map <Leader>snr :tabe ~/.vim/bundle/vim-snippets/snippets/ruby.snippets<cr>
 map <Leader>so :so %<cr>
 map <Leader>sq j<c-v>}klllcs<esc>:wq<cr>
@@ -135,6 +140,9 @@ map <Leader>vu :RVunittest<CR>
 map <Leader>vm :RVmodel<cr>
 map <Leader>vv :RVview<cr>
 map <Leader>w <C-w>w
+map <Leader>cr :CarbonNowSh<cr>
+
+map <Leader>gb :Gbrowse<cr>
 
 " CtrlP mappings
 nnoremap <leader><leader> <c-^>
@@ -150,9 +158,24 @@ nnoremap <leader>gs :CtrlP app/services<cr>
 nnoremap <leader>gt :CtrlP spec<cr>
 nnoremap <leader>gtr :CtrlP translations<cr>
 
+nnoremap <leader>jc :CtrlP projects/rd-lib/src/lib/modules/core<cr>
+nnoremap <leader>jg :CtrlP projects/rd-lib/src/lib/modules/gift-card<cr>
+nnoremap <leader>jr :CtrlP projects/rd-lib/src/lib/modules/redeem-cash<cr>
+nnoremap <leader>jr2 :CtrlP projects/rd-lib/src/lib/modules/redeem-cash-v2<cr>
+nnoremap <leader>jo :CtrlP projects/rd-lib/src/lib/modules/offer<cr>
+nnoremap <leader>jor :CtrlP projects/rd-lib/src/lib/modules/order<cr>
+nnoremap <leader>jp :CtrlP projects/rd-lib/src/lib/modules/points-transaction<cr>
+nnoremap <leader>js :CtrlP projects/rd-lib/src/lib/modules/shared<cr>
+nnoremap <leader>jt :CtrlP projects/rd-lib/src/lib/modules/transfer-connect<cr>
+nnoremap <leader>jt2 :CtrlP projects/rd-lib/src/lib/modules/transfer-connect-v2<cr>
+nnoremap <leader>jbs :CtrlP projects/bsa<cr>
+nnoremap <leader>jst :CtrlP projects/stg<cr>
+
+:let @" = expand("%:p")
+
 " Rspec.vim mappings
-let g:rspec_command = '!bundle exec spring rspec {spec}'
-" let g:rspec_command = '!bundle exec rspec {spec}'
+" let g:rspec_command = '!bundle exec spring rspec {spec}'
+let g:rspec_command = '!bundle exec rspec {spec}'
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>tl :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
@@ -168,6 +191,8 @@ vmap <C-v> <Plug>(expand_region_shrink)
 " uses expression to extract path from current file's path
 map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR><CR>
 map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR><cr>
+map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
+
 map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
 imap <C-l> :<Space>
