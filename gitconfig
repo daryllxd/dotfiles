@@ -32,8 +32,6 @@
 	enabled = 1
 [github]
 	user = daryllxd
-[merge]
-        ff = only
 [pull]
 	rebase = true
 [credential]
