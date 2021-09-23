@@ -104,6 +104,7 @@ alias ys="yarn start"
 # Work Related
 alias sdeploy="say 'starting deploy' && nohup sh -c \"(bundle exec cap staging deploy && say 'done deploy') &\""
 alias deployrc="bundle exec cap staging rails:console"
+alias ngt="ng test rd-lib"
 
 alias vn="/usr/local/Cellar/vim/8.0.0386/bin/vim ."
 
