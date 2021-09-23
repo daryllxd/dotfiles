@@ -28,8 +28,6 @@ source $HOME/Documents/rails_projects/dotfiles/zsh/functions
 source $HOME/Documents/rails_projects/dotfiles/zsh_prompt
 source ~/.bin/tmuxinator.zsh
 
-eval $(thefuck --alias)
-
 # Source cdpath
 cdpath=($HOME/Documents/rails_projects $HOME/Desktop/trainer)
 
