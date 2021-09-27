@@ -22,9 +22,12 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'rizzatti/funcoo.vim'
+
+
 Plugin 'mattn/webapi-vim'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'chiedo/vim-px-to-em'
 Plugin 'w0rp/ale'
 
@@ -63,10 +66,7 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 
 " Other languages
-Plugin 'tpope/vim-foreplay'
-Plugin 'tpope/vim-classpath'
-Plugin 'guns/vim-clojure-static'
-Plugin 'elixir-lang/vim-elixir'
+" Plugin 'tpope/vim-foreplay'
 
 call vundle#end()
 
