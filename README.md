@@ -28,3 +28,39 @@ snippet [r
 [Reference](${1:link})
 endsnippet
 ```
+
+`Ultisnips directory: ~/.vim/bundle/vim-snippets/UltiSnips/`
+
+Karabiner (can also check karabiner.json) in this file:
+
+[Reference](https://github.com/pqrs-org/Karabiner-Elements/issues/1225#issuecomment-735239193)
+
+```
+{
+  "title": "Ctrl-Shift-Q to Enter",
+  "rules": [
+    {
+      "description": "Ctrl-Shift-Q to Enter",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "q",
+            "modifiers": {
+              "mandatory": [
+                "control",
+                "left_shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "return_or_enter"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
