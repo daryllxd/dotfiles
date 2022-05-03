@@ -21,7 +21,7 @@ Run :BundleInstall in vim.
 
 - `Ultisnips` Error - this is cause got no Python. Just `brew install python3` and `brew install vim` and link your Homebrew Vim instead of your system vim.
 - If Snippets are missing [Reference](https://stackoverflow.com/questions/37511063/why-ultisnips-does-not-recognize-my-own-snippets), then check `~/.vim/bundle/vim-snippets/UltiSnips/` directory.
-
+- Specifically, `/snippets/javascript/javascript.snippets`.
 ```
 To enable snippet on Markdown:
 snippet [r
@@ -64,3 +64,13 @@ Karabiner (can also check karabiner.json) in this file:
   ]
 }
 ```
+
+Tsukuyomi
+
+- https://github.com/Quramy/tsuquyomi/pull/205
+
+Youtube Downloader (`ytdl`).
+
+- You have Python 3.
+- Install youtube-dl like this: `pip3 install youtube-dl`
+- To download: `python3 /usr/bin/youtube-dl "https://www.youtube.com/watch?v=V8DyqAr_QBs&ab_channel=KylaVillanueva"`.
