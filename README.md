@@ -69,8 +69,11 @@ Tsukuyomi
 
 - https://github.com/Quramy/tsuquyomi/pull/205
 
-Youtube Downloader (`ytdl`).
+Youtube Downloader (`ytdl`) - OBSOLETE.
 
 - You have Python 3.
 - Install youtube-dl like this: `pip3 install youtube-dl`
 - To download: `python3 /usr/bin/youtube-dl "https://www.youtube.com/watch?v=V8DyqAr_QBs&ab_channel=KylaVillanueva"`.
+
+
+Just use: `YT-DLP` since the first one throttles. [Reference](https://github.com/yt-dlp/yt-dlp)
