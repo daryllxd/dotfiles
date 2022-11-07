@@ -22,6 +22,7 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'rizzatti/funcoo.vim'
+Plugin 'APZelos/blamer.nvim'
 
 
 Plugin 'mattn/webapi-vim'
@@ -35,12 +36,15 @@ Plugin 'w0rp/ale'
 Plugin 'kristijanhusak/vim-carbon-now-sh'
 
 " Frontend
+" Plugin 'neoclide/coc.nvim' " , {'branch': 'release'} // FOR LATER
 Plugin 'othree/html5.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'joaohkfaria/vim-jest-snippets'
 " Plugin 'epilande/vim-react-snippets'
 " Plugin 'mxw/vim-jsx'
+Plugin 'Quramy/tsuquyomi'
 Plugin 'posva/vim-vue'
 Bundle 'tpope/vim-markdown'
 Plugin 'mustache/vim-mustache-handlebars'
@@ -74,6 +78,8 @@ call vundle#end()
 
 set guifont=Inconsolata\ for\ Powerline:h15
 let g:Powerline_symbols = 'fancy'
+" let g:blamer_enabled = 1
+" let g:blamer_template = '                                                                                 <committer> | <commit-short> | <summary>'
 set encoding=utf-8
 set t_Co=256
 set fillchars+=stl:\ ,stlnc:\
@@ -142,6 +148,13 @@ map <Leader>vv :RVview<cr>
 map <Leader>w <C-w>w
 map <Leader>cr :CarbonNowSh<cr>
 
+" tsuquyomi
+let g:tsuquyomi_baseurl_import_path = 1
+let g:tsuquyomi_single_quote_import = 1
+map <Leader>tu :TsuImport<cr>
+map <Leader>ta :%s/\/projects\/rd-lib\/src\/lib/\@rd-lib<cr>
+map <Leader>ta :%s/\/projects\/rd-lib\/src\/lib/\@rd-lib<cr>
+
 map <Leader>gb :Gbrowse<cr>
 
 " CtrlP mappings
@@ -158,18 +171,32 @@ nnoremap <leader>gs :CtrlP app/services<cr>
 nnoremap <leader>gt :CtrlP spec<cr>
 nnoremap <leader>gtr :CtrlP translations<cr>
 
+nnoremap <leader>obs ggIagops<tab><tab><cr>
+
 nnoremap <leader>jc :CtrlP projects/rd-lib/src/lib/modules/core<cr>
 nnoremap <leader>jg :CtrlP projects/rd-lib/src/lib/modules/gift-card<cr>
 nnoremap <leader>jr :CtrlP projects/rd-lib/src/lib/modules/redeem-cash<cr>
 nnoremap <leader>jr2 :CtrlP projects/rd-lib/src/lib/modules/redeem-cash-v2<cr>
 nnoremap <leader>jo :CtrlP projects/rd-lib/src/lib/modules/offer<cr>
+nnoremap <leader>joc :CtrlP projects/rd-lib/src/lib/modules/order-checkout<cr>
 nnoremap <leader>jor :CtrlP projects/rd-lib/src/lib/modules/order<cr>
 nnoremap <leader>jp :CtrlP projects/rd-lib/src/lib/modules/points-transaction<cr>
+nnoremap <leader>jpd :CtrlP projects/rd-lib/src/lib/modules/points-transaction-data<cr>
 nnoremap <leader>js :CtrlP projects/rd-lib/src/lib/modules/shared<cr>
+nnoremap <leader>jca :CtrlP projects/rd-lib/src/lib/modules/cart-item<cr>
+nnoremap <leader>jsc :CtrlP projects/rd-lib/src/lib/modules/shopping-cart<cr>
+nnoremap <leader>jss :CtrlP projects/rd-lib/src/lib/stylesheets<cr>
 nnoremap <leader>jt :CtrlP projects/rd-lib/src/lib/modules/transfer-connect<cr>
+nnoremap <leader>jts :e tsconfig.json<cr>
 nnoremap <leader>jt2 :CtrlP projects/rd-lib/src/lib/modules/transfer-connect-v2<cr>
+nnoremap <leader>jbn :CtrlP projects/bnz<cr>
 nnoremap <leader>jbs :CtrlP projects/bsa<cr>
+nnoremap <leader>jnt :CtrlP projects/nexus-tc<cr>
 nnoremap <leader>jst :CtrlP projects/stg<cr>
+nnoremap <leader>jsta :CtrlP projects/star<cr>
+nnoremap <leader>jan :CtrlP projects/anz<cr>
+nnoremap <leader>jhy :CtrlP projects/hyundai<cr>
+nnoremap <leader>jbn :CtrlP projects/bnz<cr>
 
 :let @" = expand("%:p")
 
@@ -179,7 +206,7 @@ let g:rspec_command = '!bundle exec rspec {spec}'
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>tl :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
-map <Leader>ts :call RunNearestSpec()<CR>
+" map <Leader>ts :call RunNearestSpec()<CR>
 
 :nnoremap <CR> :nohlsearch<cr>
 

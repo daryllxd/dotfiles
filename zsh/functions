@@ -78,7 +78,7 @@ function gcp {
 }
 
 function gp {
-  git push $* && tput bel
+  git push --no-verify $* && tput bel
 }
 
 function gpu {
