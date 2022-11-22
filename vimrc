@@ -101,7 +101,7 @@ augroup myfiletypes
   " clear old autocmds in group
   autocmd!
   " autoindent with two spaces, always expand tabs
-  autocmd filetype ruby,eruby,yaml setlocal ai sw=2 sts=2 et
+  autocmd filetype ruby,eruby,yaml,md,markdown setlocal ai sw=2 sts=2 et
   autocmd filetype ruby,eruby,yaml setlocal path+=lib
 
 augroup end
@@ -155,7 +155,7 @@ map <Leader>tu :TsuImport<cr>
 map <Leader>ta :%s/\/projects\/rd-lib\/src\/lib/\@rd-lib<cr>
 map <Leader>ta :%s/\/projects\/rd-lib\/src\/lib/\@rd-lib<cr>
 
-map <Leader>gb :Gbrowse<cr>
+map <Leader>gb :Git blame<cr>
 
 " CtrlP mappings
 nnoremap <leader><leader> <c-^>
@@ -303,6 +303,8 @@ highlight StatusLine ctermfg=blue ctermbg=yellow
 au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null" 
 
 set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
+set tabstop=2
+set shiftwidth=2
 
 
 let ruby_foldable_groups = '#' " Only fold comments (to ecnourage documentation)
