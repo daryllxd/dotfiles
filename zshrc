@@ -21,11 +21,11 @@ stty stop undef
 
 # Sourcing of other files
 # source $HOME/.dotfiles/zsh/aliases
-source $HOME/Documents/rails_projects/dotfiles/zsh/aliases
-source $HOME/Documents/rails_projects/dotfiles/zsh/functions
+source $HOME/Documents/rails-projects/dotfiles/zsh/aliases
+source $HOME/Documents/rails-projects/dotfiles/zsh/functions
 
 # Source prompt
-source $HOME/Documents/rails_projects/dotfiles/zsh_prompt
+source $HOME/Documents/rails-projects/dotfiles/zsh_prompt
 source ~/.bin/tmuxinator.zsh
 
 # Source cdpath
