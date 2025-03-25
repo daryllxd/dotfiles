@@ -46,3 +46,11 @@ export PATH="/opt/homebrew/bin:$PATH"
 
 [[ -s /Users/daryll/.autojump/etc/profile.d/autojump.sh ]] && source /Users/daryll/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
+
+# pnpm
+export PNPM_HOME="/Users/daryll/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
