@@ -44,6 +44,7 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="/opt/homebrew/bin:$PATH"
 
+# autojump is for doing `j d__` which goes to this dotfiles directory
 [[ -s /Users/daryll/.autojump/etc/profile.d/autojump.sh ]] && source /Users/daryll/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 

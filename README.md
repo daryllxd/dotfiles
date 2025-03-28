@@ -21,7 +21,10 @@ Run :BundleInstall in vim.
 
 - Iterm font: Inconsolata.
 - Iterm color theme: Tango Dark.
-- `Ultisnips` Error - this is cause got no Python. Just `brew install python3` and `brew install vim` and link your Homebrew Vim instead of your system vim. (Last time, it was just `brew install vim`.
+- `Ultisnips` Error - this is because there is no Python.
+  - `brew install python3`
+  - `brew install vim`
+  - Open new terminal or reload terminal. `homebrew vim` should be loaded, not the system one.
 - If Snippets are missing [Reference](https://stackoverflow.com/questions/37511063/why-ultisnips-does-not-recognize-my-own-snippets), then check `~/.vim/bundle/vim-snippets/UltiSnips/` directory.
 - Specifically, `/snippets/javascript/javascript.snippets`.
 ```
