@@ -68,6 +68,16 @@ function gc {
   git commit -m "$*"
 }
 
+
+# Allows commit message without typing quotes (can't have quotes in the commit msg though).
+function gca {
+  if [[ $# -gt 0 ]]; then
+    git commit -m "$*" --amend
+  else
+    git commit --amend --no-edit
+  fi
+}
+
 # Commit message that overrides no-verify
 function gcnv {
   git commit --no-verify -m "$*"
