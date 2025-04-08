@@ -33,6 +33,7 @@ alias gchm="git checkout master && git pull"
 alias gcl="git clone"
 alias gd="git diff"
 alias gdc="git diff --cached"
+alias gdh="git diff HEAD~1"
 alias gdm="git diff master"
 alias gems="cd ~/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -5"
@@ -101,7 +102,6 @@ alias onwifi='networksetup -setairportpower en0 on'
 alias offwifi='networksetup -setairportpower en0 off'
 alias ys="yarn start"
 alias ytdl="youtube-dl"
-alias recent="~/Documents/rails_projects/dotfiles/scripts/recent.sh"
 
 # Work Related
 alias sdeploy="say 'starting deploy' && nohup sh -c \"(bundle exec cap staging deploy && say 'done deploy') &\""
