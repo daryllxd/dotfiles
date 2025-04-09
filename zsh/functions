@@ -116,3 +116,15 @@ recent() {
     | head -n 10 \
     | awk -F' ~ HEAD@\\{' '{printf("\033[33m%s: \033[0m\033[37m%s\033[0m\n", substr($2, 1, length($2)-1), $1)}'
 }
+
+# Check out main or master if they exist
+function gchm() {
+  if git show-ref --verify --quiet refs/heads/master; then
+    git checkout master && git pull
+  elif git show-ref --verify --quiet refs/heads/main; then
+    git checkout main && git pull
+  else
+    echo "Neither master nor main branch exists locally"
+    return 1
+  fi
+}
