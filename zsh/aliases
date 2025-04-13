@@ -75,6 +75,7 @@ alias rdmm="bundle exec rake db:migrate && bundle exec rake db:schema:dump && bu
 alias rdr="bundle exec rake db:rollback"
 alias redis='redis-server'
 alias re="bundle exec rake db:reset && tput bel"
+alias reb="git rebase main && afplay /System/Library/Sounds/Glass.aiff"
 alias rel=". ~/.zshrc"
 alias rg="rails generate"
 alias rk="killall -9 ruby"
