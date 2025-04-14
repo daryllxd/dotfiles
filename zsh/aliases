@@ -96,6 +96,7 @@ alias startpostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgre
 alias startredis="redis-server /usr/local/etc/redis.conf &"
 alias stoppostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
 alias study='open -a Spotify; spotify play uri spotify:user:12138319146:playlist:1QgeLNN0GpwUfb3FjYyTai; itermFront'
+alias t="tabs"
 alias v="vim ."
 alias vk="killall -9 vim"
 alias whenever="whenever --update-crontab store"
