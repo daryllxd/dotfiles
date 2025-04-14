@@ -30,6 +30,7 @@ alias gcf="git commit --fixup"
 alias gch="git checkout"
 alias gcp="git cherry-pick"
 alias gcl="git clone"
+alias gclean="git branch --merged | grep -vE '^\*|main' | xargs git branch -d" # Deletes all local branches that are merged already to main
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias gdh="git diff HEAD~1"
