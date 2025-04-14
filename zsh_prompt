@@ -44,5 +44,33 @@ git_custom_status() {
 #   RPS1='$(git_custom_status) $EPS1'
 # fi
 
+# show merge status indicator
+parse_git_merge_status() {
+  local current_branch=$(git_branch_name)
+  local main_branch=""
+
+  # Skip if not in a git repo or if branch name is empty
+  [ -z "$current_branch" ] && return
+
+  # Determine main/master branch
+  if git show-ref --verify --quiet refs/heads/main; then
+    main_branch="main"
+  elif git show-ref --verify --quiet refs/heads/master; then
+    main_branch="master"
+  else
+    return
+  fi
+
+  # Don't show indicator if we're on main/master
+  [[ "$current_branch" == "$main_branch" ]] && return
+
+  # Check if merged and output indicator
+  if git branch --merged "$main_branch" 2>/dev/null | grep -q "^[* ]*$current_branch$"; then
+    echo "%{$fg[green]%}🔒%{$reset_color%}"
+  else
+    echo "%{$fg[yellow]%}👐%{$reset_color%}"
+  fi
+}
+
 # basic prompt on the left
-PROMPT='😱 😱 😱  $(git_branch_name) %{$fg[cyan]%}%~% %(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
+PROMPT='😱 $(git_custom_status) $(parse_git_merge_status) %{$fg[cyan]%}%~% %(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
