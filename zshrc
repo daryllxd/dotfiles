@@ -56,4 +56,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# auto-suggestions and syntax-highlighting - msut be at the end
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
