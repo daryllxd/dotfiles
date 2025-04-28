@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 function tabs {
-  tabset $* && tmux
+  tabset "${PWD##*/}" && tmux
 }
 
 function ytdl {
@@ -128,5 +128,21 @@ function gchm() {
   else
     echo "Neither master nor main branch exists locally"
     return 1
+  fi
+}
+
+dev() {
+  if [[ -f package.json ]]; then
+    pnpm dev "$@"
+  else
+    echo "No package.json found in this directory."
+  fi
+}
+
+test() {
+  if [[ -f package.json ]]; then
+    pnpm test "$@"
+  else
+    echo "No package.json found in this directory."
   fi
 }
