@@ -1,11 +1,19 @@
+# frozen_string_literal: true
+
 require 'rake'
+
+# What this does:
+# 1. It replaces the existing dot files with the new ones
+# 2. It links the new dot files to the home directory
+# 3. It moves the zshenv to zshrc
+# 4. It creates a tmp directory
 
 desc "install the dot files into user's home directory"
 task :install do
   replace_all = false
   Dir['*'].each do |file|
     next if %w[Rakefile README LICENSE id_dsa.pub].include? file
-    
+
     if File.exist?(File.join(ENV['HOME'], ".#{file}"))
       if replace_all
         replace_file(file)
