@@ -70,6 +70,15 @@ install_ansible() {
     else
         print_success "Ansible is already installed!"
     fi
+
+    print_status "Checking community.general collection..."
+    if ! ansible-galaxy collection list | grep -q "community.general"; then
+        print_status "Installing community.general collection..."
+        ansible-galaxy collection install community.general
+        print_success "community.general collection installed successfully!"
+    else
+        print_success "community.general collection is already installed!"
+    fi
 }
 
 main() {

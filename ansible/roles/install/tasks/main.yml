@@ -1,0 +1,5 @@
+---
+- name: Install Redis using brew
+  community.general.homebrew:
+    name: redis
+    state: present

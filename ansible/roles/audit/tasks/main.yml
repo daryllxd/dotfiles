@@ -41,6 +41,12 @@
   changed_when: false
   failed_when: false
 
+- name: Check for Redis
+  command: which redis-cli
+  register: redis_check
+  changed_when: false
+  failed_when: false
+
 - name: Display audit results
   debug:
     msg: |

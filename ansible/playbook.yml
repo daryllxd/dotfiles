@@ -2,6 +2,6 @@
 - name: Audit Development Environment
   hosts: localhost
   connection: local
-  gather_facts: true
+  gather_facts: false
   roles:
-    - audit
+    - install
