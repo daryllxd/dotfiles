@@ -4,18 +4,24 @@ Forked from [Ben Orenstein](http://github.com/r00k).
 
 vim, zsh, tmux, pry
 
-#### Installation
+## Installation Process
 
-    git clone git://github.com/daryllxd/dotfiles ~/.dotfiles
-    cd ~/.dotfiles
-    rake install
+```shell
+# TLDR
+$ git clone git://github.com/daryllxd/dotfiles ~/.dotfiles
+$ cd ~/.dotfiles
+$ bin/setup.sh
+$ rake install
+```
+
+1. `bin/setup.sh` Installs Homebrew, pip3, Ansible to automate the rest.
+2. `rake install` Creates symlinks for dotfiles.
 
 Vim plugins are managed through vundle. You'll need to install vundle to get them.
 
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 Run :BundleInstall in vim.
-
 
 ## Notes from last time this got set up
 
@@ -27,6 +33,7 @@ Run :BundleInstall in vim.
   - Open new terminal or reload terminal. `homebrew vim` should be loaded, not the system one.
 - If Snippets are missing [Reference](https://stackoverflow.com/questions/37511063/why-ultisnips-does-not-recognize-my-own-snippets), then check `~/.vim/bundle/vim-snippets/UltiSnips/` directory.
 - Specifically, `/snippets/javascript/javascript.snippets`.
+
 ```
 To enable snippet on Markdown:
 snippet [r
