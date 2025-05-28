@@ -1,5 +1,23 @@
 ---
-- name: Install Redis using brew
+- name: Install Redis using Homebrew
   community.general.homebrew:
     name: redis
     state: present
+
+- name: Check if apps are installed
+  ansible.builtin.stat:
+    path: "{{ item.path }}"
+  register: app_checks
+  loop: "{{ apps }}"
+  loop_control:
+    label: "{{ item.name }}"
+
+- name: Install missing apps
+  community.general.homebrew_cask:
+    name: "{{ item.item.name }}"
+    state: present
+    install_options: force
+  when: not item.stat.exists
+  loop: "{{ app_checks.results }}"
+  loop_control:
+    label: "{{ item.item.name }}"
