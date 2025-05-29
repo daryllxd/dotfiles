@@ -1,4 +1,3 @@
----
 - name: Install Redis using Homebrew
   community.general.homebrew:
     name: redis

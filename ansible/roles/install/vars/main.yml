@@ -1,4 +1,3 @@
----
 apps:
   - name: cursor
     path: /Applications/Cursor.app

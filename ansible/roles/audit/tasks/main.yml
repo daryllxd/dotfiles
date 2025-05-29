@@ -1,4 +1,3 @@
----
 - name: Check for Homebrew
   command: which brew
   register: brew_check
