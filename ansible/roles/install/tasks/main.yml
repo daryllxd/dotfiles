@@ -15,8 +15,9 @@
 # We want to fully remove the apps that were removed by deleting from the applications directory
 # because sometimes, homebrew will still see it and think it exists but it's already removed in applications.
 - name: Force uninstall apps that don't exist in Applications
-  ansible.builtin.command: >
-    brew uninstall --cask --force {{ item.item.name }}
+  community.general.homebrew_cask:
+    name: "{{ item.item.name }}"
+    state: absent
   when: not item.stat.exists
   loop: "{{ app_checks.results }}"
   loop_control:
