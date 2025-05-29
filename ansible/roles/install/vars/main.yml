@@ -1,0 +1,31 @@
+apps:
+  - name: cursor
+    path: /Applications/Cursor.app
+  - name: docker
+    path: /Applications/Docker.app
+  - name: discord
+    path: /Applications/Discord.app
+  - name: firefox
+    path: /Applications/Firefox.app
+  - name: google-chrome
+    path: /Applications/Google Chrome.app
+  - name: iterm2
+    path: /Applications/iTerm.app
+  - name: karabiner-elements
+    path: /Applications/Karabiner-Elements.app
+  - name: obsidian
+    path: /Applications/Obsidian.app
+  - name: postman
+    path: /Applications/Postman.app
+  - name: rectangle
+    path: /Applications/Rectangle.app
+  - name: spotify
+    path: /Applications/Spotify.app
+  - name: stats
+    path: /Applications/Stats.app
+  - name: telegram
+    path: /Applications/Telegram.app
+  - name: whatsapp
+    path: /Applications/WhatsApp.app
+  - name: zoom
+    path: /Applications/zoom.us.app

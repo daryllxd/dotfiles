@@ -1,0 +1,60 @@
+- name: Check for Homebrew
+  command: which brew
+  register: brew_check
+  changed_when: false
+  failed_when: false
+
+- name: Check for Python
+  command: which python3
+  register: python_check
+  changed_when: false
+  failed_when: false
+
+- name: Check for pip
+  command: which pip3
+  register: pip_check
+  changed_when: false
+  failed_when: false
+
+- name: Check for rbenv
+  command: which rbenv
+  register: rbenv_check
+  changed_when: false
+  failed_when: false
+
+- name: Check for pnpm
+  command: which pnpm
+  register: pnpm_check
+  changed_when: false
+  failed_when: false
+
+- name: Check for Node.js
+  command: which node
+  register: node_check
+  changed_when: false
+  failed_when: false
+
+- name: Check for PostgreSQL
+  command: which psql
+  register: psql_check
+  changed_when: false
+  failed_when: false
+
+- name: Check for Redis
+  command: which redis-cli
+  register: redis_check
+  changed_when: false
+  failed_when: false
+
+- name: Display audit results
+  debug:
+    msg: |
+      Development Environment Audit Results:
+      ------------------------------------
+      Homebrew: {{ '✅' if brew_check.rc == 0 else '❌' }}
+      Python: {{ '✅' if python_check.rc == 0 else '❌' }}
+      pip: {{ '✅' if pip_check.rc == 0 else '❌' }}
+      rbenv: {{ '✅' if rbenv_check.rc == 0 else '❌' }}
+      pnpm: {{ '✅' if pnpm_check.rc == 0 else '❌' }}
+      Node.js: {{ '✅' if node_check.rc == 0 else '❌' }}
+      PostgreSQL: {{ '✅' if psql_check.rc == 0 else '❌' }}

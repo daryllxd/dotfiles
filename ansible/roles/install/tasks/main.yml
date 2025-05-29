@@ -1,0 +1,33 @@
+- name: Install Redis using Homebrew
+  community.general.homebrew:
+    name: redis
+    state: present
+
+- name: Check if apps are installed
+  ansible.builtin.stat:
+    path: "{{ item.path }}"
+  register: app_checks
+  loop: "{{ apps | default([]) }}"
+  loop_control:
+    label: "{{ item.name }}"
+
+# We want to fully remove the apps that were removed by deleting from the applications directory
+# because sometimes, homebrew will still see it and think it exists but it's already removed in applications.
+- name: Force uninstall apps that don't exist in Applications
+  community.general.homebrew_cask:
+    name: "{{ item.item.name }}"
+    state: absent
+  when: not item.stat.exists
+  loop: "{{ app_checks.results }}"
+  loop_control:
+    label: "{{ item.item.name }}"
+
+- name: Install missing apps
+  community.general.homebrew_cask:
+    name: "{{ item.item.name }}"
+    state: present
+    install_options: force
+  when: not item.stat.exists
+  loop: "{{ app_checks.results }}"
+  loop_control:
+    label: "{{ item.item.name }}"
