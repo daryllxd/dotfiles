@@ -7,7 +7,7 @@
   ansible.builtin.stat:
     path: "{{ item.path }}"
   register: app_checks
-  loop: "{{ apps }}"
+  loop: "{{ apps | default([]) }}"
   loop_control:
     label: "{{ item.name }}"
 
