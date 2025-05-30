@@ -1,7 +1,11 @@
 ---
-- name: Audit Development Environment
+- name: Install Development Environment
   hosts: localhost
   connection: local
-  gather_facts: false
+  gather_facts: true
   roles:
-    - install
+    - role: install
+      tags:
+        - apps
+        - dev_tools
+        - redis
