@@ -3,6 +3,26 @@
     name: redis
     state: present
 
+- name: Install GitHub CLI using Homebrew
+  community.general.homebrew:
+    name: gh
+    state: present
+
+- name: Install Graphite using Homebrew
+  community.general.homebrew:
+    name: withgraphite/tap/graphite
+    state: present
+
+- name: Install coreutils using Homebrew
+  community.general.homebrew:
+    name: coreutils
+    state: present
+
+- name: Install gnupg using Homebrew
+  community.general.homebrew:
+    name: gnupg
+    state: present
+
 - name: Check if apps are installed
   ansible.builtin.stat:
     path: "{{ item.path }}"
