@@ -65,10 +65,13 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# auto-suggestions and syntax-highlighting - msut be at the end
+# auto-suggestions and syntax-highlighting - must be at the end
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh --disable-up-arrow)"
+
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
