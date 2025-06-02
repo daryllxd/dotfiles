@@ -13,8 +13,12 @@ apps:
     path: /Applications/iTerm.app
   - name: karabiner-elements
     path: /Applications/Karabiner-Elements.app
+  - name: linear-linear
+    path: /Applications/Linear.app
   - name: obsidian
     path: /Applications/Obsidian.app
+  - name: orbstack
+    path: /Applications/OrbStack.app
   - name: postman
     path: /Applications/Postman.app
   - name: rectangle
