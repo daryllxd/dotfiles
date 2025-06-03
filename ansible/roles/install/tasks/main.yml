@@ -43,6 +43,11 @@
     name: tmuxinator
     state: present
 
+- name: Install asdf using Homebrew
+  community.general.homebrew:
+    name: asdf
+    state: present
+
 - name: Check if apps are installed
   ansible.builtin.stat:
     path: "{{ item.path }}"
