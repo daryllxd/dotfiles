@@ -23,6 +23,26 @@
     name: gnupg
     state: present
 
+- name: Install The Silver Searcher using Homebrew
+  community.general.homebrew:
+    name: the_silver_searcher
+    state: present
+
+- name: Install Atuin using Homebrew
+  community.general.homebrew:
+    name: atuin
+    state: present
+
+- name: Install Autojump using Homebrew
+  community.general.homebrew:
+    name: autojump
+    state: present
+
+- name: Install Tmuxinator using Homebrew
+  community.general.homebrew:
+    name: tmuxinator
+    state: present
+
 - name: Check if apps are installed
   ansible.builtin.stat:
     path: "{{ item.path }}"
