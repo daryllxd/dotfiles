@@ -8,6 +8,11 @@
     name: gh
     state: present
 
+- name: Tap Graphite repository
+  community.general.homebrew_tap:
+    name: withgraphite/tap
+    state: present
+
 - name: Install Graphite using Homebrew
   community.general.homebrew:
     name: withgraphite/tap/graphite
