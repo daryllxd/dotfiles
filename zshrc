@@ -26,18 +26,17 @@ source $HOME/Documents/rails-projects/dotfiles/zsh/functions
 
 # Source prompt
 source $HOME/Documents/rails-projects/dotfiles/zsh_prompt
-source ~/.bin/tmuxinator.zsh
+source ~/.config/tmuxinator.zsh
+
+# autojump configuration
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
 
 # Source cdpath
 cdpath=($HOME/Documents/rails_projects $HOME/Desktop/trainer)
 
 # PATH stuff
 export ERL_AFLAGS="-kernel shell_history enabled"
-export PATH="$HOME/.rbenv/bin:$PATH"
-
-# Install rbenv first
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/shims:$PATH"
 
 # Install pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -52,10 +51,6 @@ export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH="/opt/homebrew/bin:$PATH"
-
-# autojump is for doing `j d__` which goes to this dotfiles directory
-[[ -s /Users/daryll/.autojump/etc/profile.d/autojump.sh ]] && source /Users/daryll/.autojump/etc/profile.d/autojump.sh
-autoload -U compinit && compinit -u
 
 # pnpm
 export PNPM_HOME="/Users/daryll/Library/pnpm"
@@ -73,5 +68,9 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 eval "$(atuin init zsh --disable-up-arrow)"
 
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+
+# asdf configuration
+. $(brew --prefix asdf)/libexec/asdf.sh
