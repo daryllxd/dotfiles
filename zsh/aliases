@@ -103,25 +103,5 @@ alias whenever="whenever --update-crontab store"
 alias onwifi='networksetup -setairportpower en0 on'
 alias offwifi='networksetup -setairportpower en0 off'
 alias ys="yarn start"
-alias ytdl="youtube-dl"
-
-# Work Related
-alias sdeploy="say 'starting deploy' && nohup sh -c \"(bundle exec cap staging deploy && say 'done deploy') &\""
-alias deployrc="bundle exec cap staging rails:console"
-alias ngt="ng test rd-lib"
-# alias ngt="npm run debug-test"
 
 alias vn="/usr/local/Cellar/vim/8.0.0386/bin/vim ."
-
-# work
-alias ee="cd ~/Documents/rails_projects/e2e-rewards-dashboard && tabs ee"
-alias frs="foreman run rails s -b 0.0.0.0"
-alias frc="foreman run rails c"
-alias gpurd="git pull --rebase origin develop"
-alias hound="gc '[QA] Address Hound comments'"
-alias prc="gc '[QA] Address PR comments'"
-alias ppu="git fetch origin $(git rev-parse --abbrev-ref HEAD) && git pull && npm run phraseapp-pull && git add . && git commit"
-
-# load snippets
-alias vj="vim ~/.vim/bundle/vim-snippets/UltiSnips/javascript.snippets"
-alias rmf="rm -rf hello.ts"

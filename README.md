@@ -21,27 +21,12 @@ Vim plugins are managed through vundle. You'll need to install vundle to get the
 
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
-Run :BundleInstall in vim.
+Run `:BundleInstall` in vim.
 
 ## Notes from last time this got set up
 
 - Iterm font: Inconsolata.
 - Iterm color theme: Tango Dark.
-- `Ultisnips` Error - this is because there is no Python.
-  - `brew install python3`
-  - `brew install vim`
-  - Open new terminal or reload terminal. `homebrew vim` should be loaded, not the system one.
-- If Snippets are missing [Reference](https://stackoverflow.com/questions/37511063/why-ultisnips-does-not-recognize-my-own-snippets), then check `~/.vim/bundle/vim-snippets/UltiSnips/` directory.
-- Specifically, `/snippets/javascript/javascript.snippets`.
-
-```
-To enable snippet on Markdown:
-snippet [r
-[Reference](${1:link})
-endsnippet
-```
-
-`Ultisnips directory: ~/.vim/bundle/vim-snippets/UltiSnips/`
 
 Karabiner (can also check karabiner.json) in this file:
 

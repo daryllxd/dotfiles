@@ -11,7 +11,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'MarcWeber/vim-addon-mw-utils' " vim: interpret a file by function and cache file automatically
 Plugin 'tomtom/tlib_vim' " utility functions for vim
-Plugin 'SirVer/ultisnips' " snippets
 Plugin 'honza/vim-snippets' " snippet files for languages
 Plugin 'tpope/vim-commentary' " for commenting stuff out
 Plugin 'tpope/vim-vinegar' " for splitting windows
@@ -441,10 +440,6 @@ endif " has("autocmd")
 " Auto-corrections
 
 iab teh the
-
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " CtrlP caching
 
