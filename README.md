@@ -14,8 +14,11 @@ $ bin/setup.sh
 $ rake install
 ```
 
-1. `bin/setup.sh` Installs Homebrew, pip3, Ansible to automate the rest.
-2. `rake install` Creates symlinks for dotfiles.
+## 2025 process
+
+1. `bin/setup.sh` # Installs Homebrew, pip3, Ansible to automate the rest.
+2. `rake install` # Creates symlinks for dotfiles.
+3. `just start` # Starts a tmux session for editing
 
 Vim plugins are managed through vundle. You'll need to install vundle to get them.
 
@@ -61,15 +64,3 @@ Karabiner (can also check karabiner.json) in this file:
   ]
 }
 ```
-
-Tsukuyomi
-
-- https://github.com/Quramy/tsuquyomi/pull/205
-
-Youtube Downloader (`ytdl`) - OBSOLETE.
-
-- You have Python 3.
-- Install youtube-dl like this: `pip3 install youtube-dl`
-- To download: `python3 /usr/bin/youtube-dl "https://www.youtube.com/watch?v=V8DyqAr_QBs&ab_channel=KylaVillanueva"`.
-
-Just use: `YT-DLP` since the first one throttles. [Reference](https://github.com/yt-dlp/yt-dlp)
