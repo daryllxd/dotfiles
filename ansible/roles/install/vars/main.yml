@@ -1,18 +1,24 @@
 apps:
   - name: cursor
     path: /Applications/Cursor.app
-  - name: docker
-    path: /Applications/Docker.app
   - name: discord
     path: /Applications/Discord.app
+  - name: docker
+    path: /Applications/Docker.app
   - name: firefox
     path: /Applications/Firefox.app
+  - name: freedom
+    path: /Applications/Freedom.app
   - name: google-chrome
     path: /Applications/Google Chrome.app
   - name: iterm2
     path: /Applications/iTerm.app
+  - name: jordanbaird-ice
+    path: /Applications/Ice.app
   - name: karabiner-elements
     path: /Applications/Karabiner-Elements.app
+  - name: keycastr
+    path: /Applications/KeyCastr.app
   - name: linear-linear
     path: /Applications/Linear.app
   - name: nightfall
