@@ -38,11 +38,6 @@ cdpath=($HOME/Documents/rails_projects $HOME/Desktop/trainer)
 # PATH stuff
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-# Install pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
-
 # Install psql@15 first - this is only for Supabase
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
