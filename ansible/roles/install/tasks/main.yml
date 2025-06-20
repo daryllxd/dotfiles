@@ -53,6 +53,11 @@
     name: asdf
     state: present
 
+- name: Install Inconsolata font using Homebrew Cask
+  community.general.homebrew_cask:
+    name: font-inconsolata
+    state: present
+
 - name: Check if apps are installed
   ansible.builtin.stat:
     path: "{{ item.path }}"
