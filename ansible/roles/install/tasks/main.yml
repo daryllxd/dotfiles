@@ -53,6 +53,11 @@
     name: asdf
     state: present
 
+- name: Install bat using Homebrew
+  community.general.homebrew:
+    name: bat
+    state: present
+
 - name: Install Inconsolata font using Homebrew Cask
   community.general.homebrew_cask:
     name: font-inconsolata
