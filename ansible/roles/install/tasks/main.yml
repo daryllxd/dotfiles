@@ -1,7 +1,10 @@
-- name: Install Redis using Homebrew
+- name: Install development tools
   community.general.homebrew:
-    name: redis
+    name: "{{ item }}"
     state: present
+  loop:
+    - redis
+    - go
 
 - name: Install GitHub CLI using Homebrew
   community.general.homebrew:
@@ -70,6 +73,8 @@
   loop: "{{ apps | default([]) }}"
   loop_control:
     label: "{{ item.name }}"
+  tags:
+    - apps
 
 # We want to fully remove the apps that were removed by deleting from the applications directory
 # because sometimes, homebrew will still see it and think it exists but it's already removed in applications.
@@ -81,6 +86,8 @@
   loop: "{{ app_checks.results }}"
   loop_control:
     label: "{{ item.item.name }}"
+  tags:
+    - apps
 
 - name: Install missing apps
   community.general.homebrew_cask:
@@ -91,3 +98,5 @@
   loop: "{{ app_checks.results }}"
   loop_control:
     label: "{{ item.item.name }}"
+  tags:
+    - apps
