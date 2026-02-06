@@ -54,6 +54,9 @@ alias grus="grunt serve --gruntfile 'Gruntfile.dev.js'"
 alias gs="git status"
 alias gst="git stash"
 alias gstp="git stash pop"
+alias gta="gt absorb"
+alias gtsa="gt submit --ai"
+alias gtsf="gt submit --force"
 alias gu="gulp clean && gulp serve"
 alias lc="history | ag gc | read first rest; echo $rest | pbcopy"
 alias m="say 'meditation starting'; sleep 600; say 'meditation done, thank you, write down your next tasks for the day'"
@@ -102,6 +105,7 @@ alias vk="killall -9 vim"
 alias whenever="whenever --update-crontab store"
 alias onwifi='networksetup -setairportpower en0 on'
 alias offwifi='networksetup -setairportpower en0 off'
+alias yi="yarn install"
 alias ys="yarn start"
 
 alias vn="/usr/local/Cellar/vim/8.0.0386/bin/vim ."
