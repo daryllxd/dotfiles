@@ -27,6 +27,8 @@ apps:
     path: /Applications/Obsidian.app
   - name: orbstack
     path: /Applications/OrbStack.app
+  - name: polypane
+    path: /Applications/Polypane.app
   - name: postman
     path: /Applications/Postman.app
   - name: rectangle
