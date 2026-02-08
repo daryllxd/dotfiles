@@ -1,0 +1,16 @@
+---
+- name: Check if Go is installed
+  ansible.builtin.command: go version
+  register: go_check
+  ignore_errors: true
+  changed_when: false
+  tags:
+    - dev_tools
+
+- name: Install Go if not present
+  community.general.homebrew:
+    name: go
+    state: present
+  when: go_check.rc != 0
+  tags:
+    - dev_tools
