@@ -63,6 +63,11 @@
     name: cloc
     state: present
 
+- name: Install terminal-notifier using Homebrew
+  community.general.homebrew:
+    name: terminal-notifier
+    state: present
+
 - name: Install Inconsolata font using Homebrew Cask
   community.general.homebrew_cask:
     name: font-inconsolata
