@@ -1,0 +1,16 @@
+---
+- name: Check if Redis is installed
+  ansible.builtin.command: redis-cli --version
+  register: redis_check
+  ignore_errors: true
+  changed_when: false
+  tags:
+    - redis
+
+- name: Install Redis if not present
+  community.general.homebrew:
+    name: redis
+    state: present
+  when: redis_check.rc != 0
+  tags:
+    - redis
